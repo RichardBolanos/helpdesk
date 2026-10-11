@@ -1,0 +1,43 @@
+<h1>Usuarios</h1>
+@if (error()) {
+  <p class="error">{{ error() }}</p>
+}
+<div class="card">
+  <table>
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Email</th>
+        <th>Rol</th>
+        <th>Activo</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (u of users(); track u.id) {
+        <tr>
+          <td>{{ u.name }}</td>
+          <td>{{ u.email }}</td>
+          <td>
+            <select
+              [ngModel]="u.role"
+              (ngModelChange)="update(u, { role: $event })"
+              [disabled]="isMe(u)"
+            >
+              <option value="user">user</option>
+              <option value="agent">agent</option>
+              <option value="admin">admin</option>
+            </select>
+          </td>
+          <td>
+            <input
+              type="checkbox"
+              [checked]="u.is_active"
+              [disabled]="isMe(u)"
+              (change)="update(u, { is_active: !u.is_active })"
+            />
+          </td>
+        </tr>
+      }
+    </tbody>
+  </table>
+</div>

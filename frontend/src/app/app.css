@@ -1,0 +1,7 @@
+header { display: flex; align-items: center; gap: 24px; padding: 12px 24px; background: #1e293b; color: #fff; }
+header a { color: #cbd5e1; text-decoration: none; }
+header a.active, header a:hover { color: #fff; }
+.brand { font-weight: 700; font-size: 1.1rem; color: #fff !important; }
+nav { display: flex; gap: 16px; flex: 1; }
+.session { display: flex; align-items: center; gap: 12px; margin-left: auto; }
+main { max-width: 960px; margin: 24px auto; padding: 0 16px; }

@@ -1,0 +1,79 @@
+<h1>{{ auth.hasRole('user') ? 'Mis tickets' : 'Todos los tickets' }}</h1>
+
+@if (auth.hasRole('user')) {
+  <div class="card">
+    <h2>Nuevo ticket</h2>
+    <form (ngSubmit)="create()">
+      <label>Título <input name="title" [(ngModel)]="title" required maxlength="120" /></label>
+      <label>
+        Descripción
+        <textarea name="description" rows="3" [(ngModel)]="description" required></textarea>
+      </label>
+      <label>
+        Prioridad
+        <select name="priority" [(ngModel)]="priority">
+          <option value="low">Baja</option>
+          <option value="medium">Media</option>
+          <option value="high">Alta</option>
+        </select>
+      </label>
+      <button>Crear ticket</button>
+    </form>
+  </div>
+}
+
+@if (error()) {
+  <p class="error">{{ error() }}</p>
+}
+
+<div class="card">
+  <table>
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Título</th>
+        <th>Autor</th>
+        <th>Prioridad</th>
+        <th>Estado</th>
+        <th>Fecha</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (t of tickets(); track t.id) {
+        <tr>
+          <td>{{ t.id }}</td>
+          <td>
+            <strong>{{ t.title }}</strong><br />
+            <small class="ticket-desc">{{ t.description }}</small>
+          </td>
+          <td>{{ t.author.name }}</td>
+          <td>
+            <span class="badge {{ t.priority }}">{{ t.priority }}</span>
+          </td>
+          <td>
+            @if (auth.hasRole('agent', 'admin')) {
+              <select [ngModel]="t.status" (ngModelChange)="setStatus(t, $event)">
+                <option value="open">open</option>
+                <option value="in_progress">in_progress</option>
+                <option value="closed">closed</option>
+              </select>
+            } @else {
+              <span class="badge {{ t.status }}">{{ t.status }}</span>
+            }
+          </td>
+          <td>{{ t.created_at | date: 'short' }}</td>
+          <td>
+            @if (auth.hasRole('admin')) {
+              <button class="danger" (click)="remove(t)">Borrar</button>
+            }
+          </td>
+        </tr>
+      } @empty {
+        <tr>
+          <td colspan="7">No hay tickets.</td>
+        </tr>
+      }
+    </tbody>
+  </table>
+</div>

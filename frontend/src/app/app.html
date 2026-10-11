@@ -1,0 +1,19 @@
+<header>
+  <a class="brand" routerLink="/">🎫 HelpDesk</a>
+  @if (auth.isLoggedIn()) {
+  <nav>
+    <a routerLink="/tickets" routerLinkActive="active">Tickets</a>
+    @if (auth.hasRole('admin')) {
+    <a routerLink="/users" routerLinkActive="active">Usuarios</a>
+    }
+  </nav>
+  <div class="session">
+    <span>
+      {{ auth.user()?.name }}
+      <small class="badge {{ auth.user()?.role }}">{{ auth.user()?.role }}</small>
+    </span>
+    <button class="secondary" (click)="auth.logout()">Salir</button>
+  </div>
+  }
+</header>
+<main><router-outlet /></main>''

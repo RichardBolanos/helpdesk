@@ -1,0 +1,9 @@
+td select {
+  padding: 4px 8px;
+}
+
+input[type='checkbox'] {
+  width: 18px;
+  height: 18px;
+  padding: 0;
+}
