@@ -140,6 +140,7 @@ El código de la API se recarga solo al guardar (carpeta `backend/app` montada e
 | El login dice *"No se pudo conectar con el servidor"* | La API no está corriendo. Revisa `docker compose ps` y `docker compose logs api`. |
 | En la consola del navegador aparece un error de **CORS** | El frontend está en una dirección distinta a `http://localhost:4200`. Usa esa, o agrégala a `CORS_ORIGINS` y ejecuta `docker compose up -d --force-recreate api`. |
 | `npm install` falla o `ng` no se reconoce | Versión de Node demasiado antigua: comprueba `node --version` (necesitas 22.22.3 o superior, 24.15+ o 26+). Si usas `nvm`, ejecuta `nvm install --lts`. |
+| `npm install` muestra avisos `npm warn install-scripts` | Es normal con npm 11: avisa de scripts opcionales de aceleración que no se ejecutan. La instalación funciona igual; ignóralos. |
 | Registro con error *"Datos inválidos"* | El email debe tener un dominio real (no se aceptan `.local`) y la contraseña entre 8 y 72 caracteres. |
 | Cambié el `.env` y no se nota | Los contenedores leen el `.env` al crearse: ejecuta `docker compose up -d --force-recreate`. |
 
