@@ -6,7 +6,19 @@ Sistema de tickets de soporte para aprender un proyecto web completo: **Angular 
 
 ## Qué aprenderás con él
 
-HTTP y sus métodos (GET, POST, PATCH, DELETE), el DOM, CSS, componentes de Angular, servicios, interceptores y guards, JWT, roles, CORS, Docker y envío de correos. Hay una guía en PDF que lo explica con el código de este mismo proyecto: [`docs/guia-angular-helpdesk.pdf`](docs/guia-angular-helpdesk.pdf).
+HTTP y sus métodos (GET, POST, PATCH, DELETE), el DOM, CSS, componentes de Angular, servicios, interceptores y guards, JWT, roles, CORS, Docker y envío de correos.
+
+## Para estudiantes de Programación Web 1 (2026-2)
+
+Este repositorio es el **proyecto de referencia**: la versión terminada. Tú no lo vas a copiar, lo vas a **construir desde cero** en tu propio repositorio siguiendo la guía:
+
+**[Guía paso a paso →](docs/guia-paso-a-paso/README.md)**
+
+- Son 15 iteraciones cortas, una o varias por clase. El cronograma con las fechas está en la guía.
+- **El proyecto es lo que se evalúa en los dos parciales** (3 de noviembre y 1 de diciembre). Los parciales se hacen sobre tu repositorio: debes tenerlo al día, con un commit por iteración, y corriendo en tu computador. Los detalles están en la sección *Evaluación* de la guía.
+- Usa este repositorio para comparar cuando te atasques. Las instrucciones de abajo sirven para correrlo y ver cómo debe quedar el tuyo.
+
+Como lectura complementaria está la guía en PDF, que recorre el proyecto terminado y explica cómo viaja un clic desde el navegador hasta la base de datos: [`docs/guia-angular-helpdesk.pdf`](docs/guia-angular-helpdesk.pdf).
 
 ## Roles
 
@@ -50,9 +62,11 @@ Luego **abre Docker Desktop y espera** a que diga *"Engine running"*. Si Docker 
 ### Paso 1 · Descarga el proyecto
 
 ```bash
-git clone https://github.com/RichardBolanos/helpdesk.git
-cd helpdesk
+git clone https://github.com/RichardBolanos/helpdesk.git helpdesk-referencia
+cd helpdesk-referencia
 ```
+
+Se clona con el nombre `helpdesk-referencia` para que no choque con la carpeta `helpdesk` donde construyes tu propio proyecto con la guía. En el resto de este archivo, "la carpeta del proyecto" es `helpdesk-referencia/`.
 
 
 ### Paso 2 · Revisa la configuración (opcional)
@@ -69,7 +83,7 @@ El archivo [`.env`](.env) ya viene listo con valores de desarrollo; **no necesit
 
 ### Paso 3 · Levanta el backend (base de datos + API + correos)
 
-Desde la carpeta del proyecto (`helpdesk/`):
+Desde la carpeta del proyecto (`helpdesk-referencia/`):
 
 ```bash
 docker compose up -d --build
@@ -170,7 +184,9 @@ backend/    API FastAPI (routers, modelos, seguridad JWT, correos)
 frontend/   Aplicación Angular
   src/app/core/    servicios, interceptor y guards (cada uno con su .spec.ts)
   src/app/pages/   una carpeta por pantalla: .ts + .html + .css + .spec.ts
-docs/       Guía de aprendizaje en PDF y el script que la genera
+docs/
+  guia-paso-a-paso/          guía para construir el proyecto desde cero, cronograma y evaluación
+  guia-angular-helpdesk.pdf  recorrido del proyecto terminado (y build_guia.py, que lo genera)
 ```
 
 > La seguridad real vive en el backend: los guards y botones ocultos del frontend solo mejoran la experiencia.
