@@ -6,7 +6,7 @@ No es una guía para copiar y pegar. Cada iteración te pide pensar antes de esc
 
 ## Cómo está organizada
 
-Son 15 iteraciones cortas (30 a 45 minutos cada una) más una opcional. Cada iteración tiene la misma estructura:
+Son 15 iteraciones cortas (30 a 45 minutos cada una), una tarea de JavaScript y una iteración opcional. Cada iteración tiene la misma estructura:
 
 | Sección | Para qué sirve |
 |---|---|
@@ -31,6 +31,7 @@ Son 15 iteraciones cortas (30 a 45 minutos cada una) más una opcional. Cada ite
 | 05 | [Proteger rutas y roles](05-proteger-rutas-roles.md) | Autorización, 401 vs 403, dependencias | Seguridad, auditoría de código |
 | | **Bloque 2 · Frontend** | | |
 | 06 | [Esqueleto en Angular](06-angular-esqueleto.md) | SPA, CSR/SSR, componentes, HTML semántico, Flexbox | HTML5, SEO, CSS, Flexbox, meta-frameworks |
+| tarea | [JavaScript mínimo para Angular](06b-javascript-minimo.md) | Funciones flecha, `map`/`filter`, spread, `?.`, `??`, clases, módulos | Programación funcional en JavaScript (ES6+), modularidad |
 | 07 | [TypeScript y señales](07-typescript-senales.md) | Tipos, estado con signals, control de flujo, ES6 funcional | TypeScript, programación funcional, estado |
 | 08 | [Navegación con rutas](08-rutas.md) | Router, carga diferida | Rendimiento, SPA |
 | 09 | [Login contra la API](09-http-login-cors.md) | Asincronismo, Observables, CORS | Event Loop, Promises, async/await, APIs REST |
@@ -51,6 +52,7 @@ Clases los martes, 3 horas. Cada sesión cubre el *Paso a paso* y el *Comprueba*
 | Oct 20 | 02–04 | Base de datos, CRUD de tickets, registro y login |
 | Oct 27 | 05–06 | Backend completo con roles y el esqueleto en Angular |
 | **Nov 3** | **Parcial 1** (iteraciones 00–06) | |
+| Antes del Nov 10 | Tarea: [JavaScript mínimo](06b-javascript-minimo.md) | El JavaScript moderno que usa Angular |
 | Nov 10 | 07–09 | Pantallas con rutas y login real contra la API |
 | Nov 17 | 10–12 | Sesión, guards y tickets conectados |
 | Nov 24 | 13–14 y ponerse al día | Aplicación completa, pruebas y CI |
@@ -73,6 +75,12 @@ En el parcial puede pasar cualquiera de estas cosas:
 - Hacer un cambio pequeño en vivo y sin IA: un campo nuevo, un endpoint, un filtro, una regla de permisos.
 
 Si el código está en tu repositorio pero no lo puedes explicar, para la nota es como si no estuviera.
+
+## Qué se asume que ya sabes
+
+HTML, CSS y Bootstrap básicos, y JavaScript básico (variables, condicionales, ciclos y funciones). Python, HTTP, bases de datos y TypeScript se explican desde cero.
+
+El JavaScript que usa Angular va bastante más allá de lo básico. Por eso, entre el parcial 1 y la clase del 10 de noviembre, hay una tarea: [JavaScript mínimo para Angular](06b-javascript-minimo.md). Sin ella, el bloque de Angular se vuelve copiar sin entender.
 
 ## Qué temas del plan quedan por fuera y por qué
 

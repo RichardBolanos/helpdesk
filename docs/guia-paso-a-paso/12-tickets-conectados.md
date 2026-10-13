@@ -2,6 +2,8 @@
 
 **Clase:** martes 17 de noviembre · **Entra en:** parcial 2 · **Duración:** 45 min · **Temas del plan:** consumo de APIs REST, arquitectura del frontend.
 
+> **JavaScript que vas a ver aquí:** [métodos de arreglos](06b-javascript-minimo.md#6-métodos-de-arreglos), [spread y rest](06b-javascript-minimo.md#7-spread-rest-y-atajos-de-objetos), [plantillas de texto](06b-javascript-minimo.md#2-plantillas-de-texto-template-literals). Si algo no lo reconoces, repásalo en la tarea [JavaScript mínimo](06b-javascript-minimo.md) antes de seguir.
+
 ## Lo que vas a construir
 
 La pantalla de tickets trabajando con datos reales: lista, crea, cambia el estado y borra contra la API. Lo que ve y puede hacer cada persona depende de su rol.

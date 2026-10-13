@@ -2,6 +2,8 @@
 
 **Clase:** martes 10 de noviembre · **Entra en:** parcial 2 · **Duración:** 35 min · **Temas del plan:** SPA, rendimiento y velocidad de carga.
 
+> **JavaScript que vas a ver aquí:** [funciones flecha](06b-javascript-minimo.md#4-funciones-flecha), [módulos](06b-javascript-minimo.md#10-módulos-import-y-export). Si algo no lo reconoces, repásalo en la tarea [JavaScript mínimo](06b-javascript-minimo.md) antes de seguir.
+
 ## Lo que vas a construir
 
 Cuatro pantallas (login, registro, tickets y usuarios) con su propia dirección (`/login`, `/tickets`, ...), un menú que navega entre ellas sin recargar la página y que solo descarga el código de cada pantalla cuando se necesita.

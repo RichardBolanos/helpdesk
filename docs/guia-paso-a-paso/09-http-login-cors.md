@@ -2,6 +2,8 @@
 
 **Clase:** martes 10 de noviembre · **Entra en:** parcial 2 · **Duración:** 45 min · **Temas del plan:** asincronismo (Event Loop, Promises, async/await), consumo de APIs REST, contextos de ejecución.
 
+> **JavaScript que vas a ver aquí:** [plantillas de texto](06b-javascript-minimo.md#2-plantillas-de-texto-template-literals), [objetos y JSON](06b-javascript-minimo.md#3-objetos-arreglos-y-json), [funciones como valores](06b-javascript-minimo.md#5-funciones-como-valores), [spread y rest](06b-javascript-minimo.md#7-spread-rest-y-atajos-de-objetos), [operadores cortos](06b-javascript-minimo.md#8-verdadero-falso-y-operadores-cortos). Si algo no lo reconoces, repásalo en la tarea [JavaScript mínimo](06b-javascript-minimo.md) antes de seguir.
+
 ## Lo que vas a construir
 
 El formulario de login enviando el correo y la contraseña al backend y recibiendo el token. En el camino te vas a encontrar con un error de **CORS**, vas a entender por qué pasa y lo vas a resolver en el backend.

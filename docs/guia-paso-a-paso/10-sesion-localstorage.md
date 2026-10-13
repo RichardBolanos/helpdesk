@@ -2,6 +2,8 @@
 
 **Clase:** martes 17 de noviembre · **Entra en:** parcial 2 · **Duración:** 45 min · **Temas del plan:** persistencia de datos del lado del cliente (LocalStorage, IndexedDB), gestión del estado.
 
+> **JavaScript que vas a ver aquí:** [objetos y JSON](06b-javascript-minimo.md#3-objetos-arreglos-y-json), [métodos de arreglos](06b-javascript-minimo.md#6-métodos-de-arreglos), [spread y rest](06b-javascript-minimo.md#7-spread-rest-y-atajos-de-objetos), [operadores cortos](06b-javascript-minimo.md#8-verdadero-falso-y-operadores-cortos). Si algo no lo reconoces, repásalo en la tarea [JavaScript mínimo](06b-javascript-minimo.md) antes de seguir.
+
 ## Lo que vas a construir
 
 Después del login, la aplicación recuerda quién eres aunque recargues la página. El encabezado muestra tu nombre y tu rol, el botón *Salir* cierra la sesión y el registro de usuarios queda conectado a la API.

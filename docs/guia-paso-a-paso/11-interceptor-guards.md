@@ -2,6 +2,8 @@
 
 **Clase:** martes 17 de noviembre · **Entra en:** parcial 2 · **Duración:** 35 min · **Temas del plan:** arquitectura modular, seguridad, programación funcional.
 
+> **JavaScript que vas a ver aquí:** [funciones como valores](06b-javascript-minimo.md#5-funciones-como-valores), [operadores cortos](06b-javascript-minimo.md#8-verdadero-falso-y-operadores-cortos), [plantillas de texto](06b-javascript-minimo.md#2-plantillas-de-texto-template-literals). Si algo no lo reconoces, repásalo en la tarea [JavaScript mínimo](06b-javascript-minimo.md) antes de seguir.
+
 ## Lo que vas a construir
 
 - Un **interceptor** que le pone el token a todas las peticiones y cierra la sesión si el backend responde que el token ya no sirve.

@@ -2,6 +2,8 @@
 
 **Clase:** martes 10 de noviembre · **Entra en:** parcial 2 · **Duración:** 45 min · **Temas del plan:** TypeScript, programación funcional en JavaScript (ES6+), gestión del estado, CSS Grid.
 
+> **Requisito:** haber hecho la tarea [JavaScript mínimo](06b-javascript-minimo.md). Aquí se usan [clases y `this`](06b-javascript-minimo.md#9-clases-y-this), [funciones flecha](06b-javascript-minimo.md#4-funciones-flecha), [métodos de arreglos](06b-javascript-minimo.md#6-métodos-de-arreglos), [spread y rest](06b-javascript-minimo.md#7-spread-rest-y-atajos-de-objetos), [módulos](06b-javascript-minimo.md#10-módulos-import-y-export).
+
 ## Lo que vas a construir
 
 La pantalla de tickets funcionando **con datos de prueba en memoria**: una tabla que lista tickets, un formulario para agregar y un botón para borrar. Todavía no hablamos con el backend; primero entendemos cómo Angular muestra y actualiza datos.
@@ -302,7 +304,7 @@ Y en `src/app/app.html`, dentro de `<main>`, debajo del `<router-outlet />`:
 
 - Un compañero escribe `this.tickets().unshift(ticket)` en lugar de `this.tickets.update(...)`. `unshift` mete el ticket en la **misma** lista. ¿Cómo se entera la señal de que algo cambió si nadie llamó a `set` ni a `update`? Explícale por qué es un error aunque a veces parezca funcionar.
 - **Reto:** agrega un botón **Cerrar** en cada fila que cambie el estado del ticket a `closed`. Usa `update` y `map`. Pista: `{ ...x, status: 'closed' }` crea una copia de `x` con un campo cambiado.
-- **Reto (CSS Grid):** Flexbox reparte en **una** dirección; **Grid** organiza en filas **y** columnas a la vez. En `tickets.css`, haz que el formulario quede en dos columnas: título y prioridad lado a lado, y la descripción y el botón ocupando todo el ancho. Pistas: `display: grid`, `grid-template-columns: 2fr 1fr` y `grid-column: 1 / -1`. Necesitarás un selector más específico que el `form` global, como `.card form`.
+- **Reto (CSS Grid):** la "grilla" de Bootstrap (`row` y `col-*`) en realidad está hecha con Flexbox, que reparte en **una** dirección. **CSS Grid** es otra cosa: organiza en filas **y** columnas a la vez, sin clases extra en cada hijo. En `tickets.css`, haz que el formulario quede en dos columnas: título y prioridad lado a lado, y la descripción y el botón ocupando todo el ancho. Pistas: `display: grid`, `grid-template-columns: 2fr 1fr` y `grid-column: 1 / -1`. Necesitarás un selector más específico que el `form` global, como `.card form`.
 
 ## Guarda tu avance
 

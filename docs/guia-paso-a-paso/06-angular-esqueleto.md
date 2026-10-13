@@ -52,29 +52,35 @@ El plan de estudio menciona React. Esta tabla te sirve para traducir lo que apre
 | Cómo actualiza la pantalla | Plantillas compiladas + signals avisan qué cambió | DOM virtual: compara versiones y aplica diferencias |
 | Meta-framework con SSR | Angular SSR (integrado) | Next.js |
 
-### HTML semántico y SEO
+### HTML semántico: un repaso con propósito
 
-Las etiquetas **semánticas** dicen qué es cada parte: `<header>` (encabezado), `<nav>` (menú), `<main>` (contenido principal), `<button>` (algo que se oprime). Un `<div>` no dice nada. Esto les sirve a los lectores de pantalla que usan personas con discapacidad visual y a los buscadores (SEO). Por la misma razón el documento debe declarar su idioma (`lang="es"`), un título y una descripción.
+Ya conoces HTML. Lo nuevo aquí es usar la etiqueta que **dice qué es** cada parte: `<header>`, `<nav>`, `<main>`, `<button>`. Un `<div>` no dice nada. Los lectores de pantalla (que usan personas con discapacidad visual) y los buscadores (SEO) se guían por esas etiquetas, por el idioma (`lang="es"`), el título y la descripción del documento.
+
+### De Bootstrap a CSS propio
+
+En este proyecto no usamos Bootstrap. No porque esté mal, sino porque Bootstrap es CSS que alguien más escribió, y ahora vas a ver qué hay debajo de las clases que ya conoces. Cuando entiendas esto, vas a usar Bootstrap (o Tailwind) sabiendo qué hace cada clase.
+
+Casi todas las clases de diseño de Bootstrap son **Flexbox**. Compara:
+
+| Bootstrap | CSS que hay detrás | Qué hace |
+|---|---|---|
+| `d-flex` | `display: flex` | Los hijos se ponen en fila |
+| `flex-column` | `flex-direction: column` | Los hijos se ponen en columna |
+| `align-items-center` | `align-items: center` | Centra los hijos en vertical |
+| `gap-4` | `gap: 1.5rem` (24 px) | Espacio entre hijos |
+| `flex-grow-1` | `flex-grow: 1` (nosotros usamos `flex: 1`, casi igual) | Este hijo ocupa todo el espacio que sobre |
+| `ms-auto` | `margin-left: auto` | Empuja este hijo hasta el extremo derecho |
+
+Y los componentes de Bootstrap que usaste tienen su versión casera en el `styles.css` que vas a escribir hoy: `.card` es la tarjeta, `.badge` la etiqueta de color, `button.danger` hace lo mismo que `btn btn-danger`.
 
 ### La cascada y los estilos por componente
 
-CSS significa *Cascading Style Sheets*: cuando varias reglas afectan al mismo elemento, gana la más **específica** y, si empatan, la que aparece **de última**. En Angular hay dos niveles:
+Cuando varias reglas afectan al mismo elemento, gana la más **específica** y, si empatan, la que aparece **de última**. Por eso, cuando tu CSS "no hacía nada" encima de Bootstrap, casi siempre era que la regla de Bootstrap era más específica.
 
-- `src/styles.css`: estilos **globales**, para toda la aplicación (botones, tarjetas, tablas).
-- El `.css` de cada componente: Angular lo **encapsula**, así que una regla `header {}` en `app.css` no afecta a ningún otro componente.
+En Angular hay dos niveles de estilos:
 
-### Flexbox
-
-`display: flex` pone a los hijos de un elemento en fila (o en columna) y controla cómo se reparten el espacio. Las propiedades que vas a usar hoy:
-
-| Propiedad | Qué hace |
-|---|---|
-| `display: flex` | Los hijos se ponen en fila |
-| `align-items: center` | Centra los hijos en vertical |
-| `gap: 24px` | Espacio entre hijos |
-| `flex: 1` | Este hijo ocupa todo el espacio que sobre |
-| `margin-left: auto` | Empuja este hijo hasta el extremo derecho |
-| `flex-direction: column` | Los hijos se ponen en columna |
+- `src/styles.css`: estilos **globales**, para toda la aplicación (botones, tarjetas, tablas). Es el equivalente a incluir Bootstrap.
+- El `.css` de cada componente: Angular lo **encapsula**, así que una regla `header {}` en `app.css` no afecta a ningún otro componente. Esto no existe en un sitio con HTML y CSS normales.
 
 ## Paso a paso
 
@@ -220,7 +226,7 @@ main { max-width: 960px; margin: 24px auto; padding: 0 16px; }
 ## Para pensar
 
 - Quita `flex: 1` de `nav` en `app.css`. ¿Cambia algo? ¿Por qué el `margin-left: auto` de `.session` sigue empujándola a la derecha?
-- **Reto (mobile-first):** pon el navegador en modo celular (F12 → ícono de celular, ancho 375 px). La barra se ve apretada. Diseñar *mobile-first* significa escribir primero los estilos para pantallas pequeñas y luego mejorarlos para pantallas grandes con `@media (min-width: ...)`. Haz que en celular el encabezado se apile en columna y que desde 640 px vuelva a estar en fila. Pista: `flex-direction` y `flex-wrap`.
+- **Reto (mobile-first):** pon el navegador en modo celular (F12 → ícono de celular, ancho 375 px). La barra se ve apretada. En Bootstrap escribías `col-12 col-md-6`: una columna en celular y media pantalla desde el tamaño `md`. Eso es *mobile-first*: primero los estilos para pantallas pequeñas y luego, para las grandes, un `@media (min-width: 768px) { ... }` (768 px es justo el `md` de Bootstrap). Haz que en celular el encabezado se apile en columna y que desde 768 px vuelva a estar en fila. Pista: `flex-direction`.
 
 ## Guarda tu avance
 
@@ -239,3 +245,5 @@ Con esta iteración se cierra lo que entra en el parcial 1. Verifica que:
 - `docker compose up -d` levanta el backend y `/docs` responde.
 - `npx ng serve` abre la aplicación con el encabezado.
 - Puedes responder sin mirar las preguntas de *Antes de programar* y *Para pensar* de las iteraciones 00 a 06, sobre todo la tabla de códigos de estado de la 05.
+
+Después del parcial, antes de la clase del 10 de noviembre, haz la tarea [JavaScript mínimo para Angular](06b-javascript-minimo.md). La iteración 07 arranca dando por hecho que la hiciste.
