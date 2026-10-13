@@ -1,6 +1,6 @@
 # Iteración 10 · Mantener la sesión
 
-**Duración:** 45 min · **Temas del plan:** persistencia de datos del lado del cliente (LocalStorage, IndexedDB), gestión del estado.
+**Clase:** martes 17 de noviembre · **Entra en:** parcial 2 · **Duración:** 45 min · **Temas del plan:** persistencia de datos del lado del cliente (LocalStorage, IndexedDB), gestión del estado.
 
 ## Lo que vas a construir
 

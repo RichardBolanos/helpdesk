@@ -1,6 +1,6 @@
 # Iteración 06 · Esqueleto en Angular
 
-**Duración:** 45 min · **Temas del plan:** HTML5 semántico, SEO, cascada, Flexbox, meta-frameworks y estrategias de renderizado.
+**Clase:** martes 27 de octubre · **Entra en:** parcial 1 · **Duración:** 45 min · **Temas del plan:** HTML5 semántico, SEO, cascada, Flexbox, meta-frameworks y estrategias de renderizado.
 
 ## Lo que vas a construir
 
@@ -230,3 +230,12 @@ Desde la raíz `helpdesk/`:
 git add .
 git commit -m "feat(web): proyecto Angular con estructura base"
 ```
+
+## Antes del parcial 1 (martes 3 de noviembre)
+
+Con esta iteración se cierra lo que entra en el parcial 1. Verifica que:
+
+- `git log --oneline` muestra un commit por cada iteración, de la 00 a la 06.
+- `docker compose up -d` levanta el backend y `/docs` responde.
+- `npx ng serve` abre la aplicación con el encabezado.
+- Puedes responder sin mirar las preguntas de *Antes de programar* y *Para pensar* de las iteraciones 00 a 06, sobre todo la tabla de códigos de estado de la 05.

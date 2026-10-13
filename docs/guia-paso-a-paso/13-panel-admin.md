@@ -1,6 +1,6 @@
 # Iteración 13 · Panel de administración
 
-**Duración:** 35 min · **Temas del plan:** auditoría de seguridad, interfaces interactivas.
+**Clase:** martes 24 de noviembre · **Entra en:** parcial 2 · **Duración:** 35 min · **Temas del plan:** auditoría de seguridad, interfaces interactivas.
 
 ## Lo que vas a construir
 

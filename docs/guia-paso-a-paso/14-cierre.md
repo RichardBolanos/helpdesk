@@ -1,6 +1,6 @@
 # Iteración 14 · Cierre: pruebas, despliegue y auditoría con IA
 
-**Duración:** 60 min (se puede partir en dos sesiones) · **Temas del plan:** auditoría técnica asistida por IA, CI/CD, despliegue, Git colaborativo.
+**Clase:** martes 24 de noviembre · **Entra en:** parcial 2 · **Duración:** 60 min (si no alcanza el tiempo, las partes 3 y 4 se terminan en casa antes del parcial) · **Temas del plan:** auditoría técnica asistida por IA, CI/CD, despliegue, Git colaborativo.
 
 ## Lo que vas a construir
 
@@ -227,3 +227,13 @@ git add .
 git commit -m "test: pruebas del frontend y flujo de CI"
 git push
 ```
+
+## Antes del parcial 2 (martes 1 de diciembre)
+
+El parcial 2 es sobre el proyecto completo. Verifica que:
+
+- `git log --oneline` muestra un commit por cada iteración, de la 00 a la 14.
+- Backend y frontend arrancan en tu computador y puedes recorrer el flujo completo con los tres roles.
+- `npx ng test --watch=false` pasa.
+- Puedes explicar, archivo por archivo, qué pasa desde que un usuario oprime *Crear ticket* hasta que la fila aparece en la tabla.
+- Intentaste al menos una de las ideas de *Para ir más allá*: se parecen a los cambios en vivo que te pueden pedir.

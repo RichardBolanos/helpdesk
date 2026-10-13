@@ -1,10 +1,12 @@
 # Iteración 00 · Antes de empezar
 
-**Duración:** 40 min · **Temas del plan:** arquitectura de sistemas web, modelo cliente-servidor, Git, asistentes de código.
+**Clase:** martes 13 de octubre · **Entra en:** parcial 1 · **Duración:** 40 min · **Temas del plan:** arquitectura de sistemas web, modelo cliente-servidor, Git, asistentes de código.
 
 ## Lo que vas a construir
 
-Todavía nada de código. Vas a dejar listo el computador, entender qué piezas tiene el sistema y crear el repositorio donde vas a trabajar todo el semestre.
+Todavía nada de código. Vas a dejar listo el computador, entender qué piezas tiene el sistema y crear el repositorio donde vas a construir el proyecto de aquí al final del curso. Ese repositorio es lo que se evalúa en los dos parciales, así que cuídalo desde hoy.
+
+> Si la instalación de alguna herramienta no termina en clase (Docker suele ser la más demorada), termínala en casa **antes del martes 20 de octubre**, junto con la iteración 01. Ese día se arranca directamente con la 02.
 
 ## Antes de programar
 

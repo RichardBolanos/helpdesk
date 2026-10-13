@@ -1,6 +1,6 @@
 # Iteración 04 · Registro, login y JWT
 
-**Duración:** 45 min · **Temas del plan:** seguridad en sistemas web, HTTP.
+**Clase:** martes 20 de octubre · **Entra en:** parcial 1 · **Duración:** 45 min · **Temas del plan:** seguridad en sistemas web, HTTP.
 
 ## Lo que vas a construir
 

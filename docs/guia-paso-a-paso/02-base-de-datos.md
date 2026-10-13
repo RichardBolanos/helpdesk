@@ -1,6 +1,6 @@
 # Iteración 02 · Base de datos y modelos
 
-**Duración:** 45 min · **Temas del plan:** arquitectura de sistemas web, seguridad de datos.
+**Clase:** martes 20 de octubre · **Entra en:** parcial 1 · **Duración:** 45 min · **Temas del plan:** arquitectura de sistemas web, seguridad de datos.
 
 ## Lo que vas a construir
 

@@ -1,6 +1,6 @@
 # Extra · Correos automáticos
 
-**Duración:** 40 min · **Temas del plan:** integración de servicios, rendimiento.
+**Clase:** ninguna (opcional) · **Entra en:** no se evalúa · **Duración:** 40 min · **Temas del plan:** integración de servicios, rendimiento.
 
 Esta iteración es opcional. Hazla si tienes tiempo después de la 13; no está en el cronograma de clases.
 

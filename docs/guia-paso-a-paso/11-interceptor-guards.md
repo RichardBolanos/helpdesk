@@ -1,6 +1,6 @@
 # Iteración 11 · Interceptor y guards
 
-**Duración:** 35 min · **Temas del plan:** arquitectura modular, seguridad, programación funcional.
+**Clase:** martes 17 de noviembre · **Entra en:** parcial 2 · **Duración:** 35 min · **Temas del plan:** arquitectura modular, seguridad, programación funcional.
 
 ## Lo que vas a construir
 

@@ -1,6 +1,6 @@
 # Iteración 08 · Navegación con rutas
 
-**Duración:** 35 min · **Temas del plan:** SPA, rendimiento y velocidad de carga.
+**Clase:** martes 10 de noviembre · **Entra en:** parcial 2 · **Duración:** 35 min · **Temas del plan:** SPA, rendimiento y velocidad de carga.
 
 ## Lo que vas a construir
 

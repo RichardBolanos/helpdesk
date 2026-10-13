@@ -1,6 +1,6 @@
 # Iteración 01 · Tu primera API
 
-**Duración:** 40 min · **Temas del plan:** protocolo HTTP/HTTPS, modelo cliente-servidor.
+**Clase:** martes 13 de octubre · **Entra en:** parcial 1 · **Duración:** 40 min · **Temas del plan:** protocolo HTTP/HTTPS, modelo cliente-servidor.
 
 ## Lo que vas a construir
 

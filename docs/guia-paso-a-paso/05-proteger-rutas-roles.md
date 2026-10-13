@@ -1,6 +1,6 @@
 # Iteración 05 · Proteger rutas y roles
 
-**Duración:** 45 min · **Temas del plan:** seguridad, auditoría de código.
+**Clase:** martes 27 de octubre · **Entra en:** parcial 1 · **Duración:** 45 min · **Temas del plan:** seguridad, auditoría de código.
 
 ## Lo que vas a construir
 

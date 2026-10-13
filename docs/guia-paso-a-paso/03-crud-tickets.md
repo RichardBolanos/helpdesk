@@ -1,6 +1,6 @@
 # Iteración 03 · CRUD de tickets
 
-**Duración:** 45 min · **Temas del plan:** APIs REST, validación de datos.
+**Clase:** martes 20 de octubre · **Entra en:** parcial 1 · **Duración:** 45 min · **Temas del plan:** APIs REST, validación de datos.
 
 ## Lo que vas a construir
 

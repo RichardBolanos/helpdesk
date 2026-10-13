@@ -1,6 +1,6 @@
 # Iteración 12 · Tickets conectados
 
-**Duración:** 45 min · **Temas del plan:** consumo de APIs REST, arquitectura del frontend.
+**Clase:** martes 17 de noviembre · **Entra en:** parcial 2 · **Duración:** 45 min · **Temas del plan:** consumo de APIs REST, arquitectura del frontend.
 
 ## Lo que vas a construir
 

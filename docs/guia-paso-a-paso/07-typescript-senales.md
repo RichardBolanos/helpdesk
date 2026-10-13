@@ -1,6 +1,6 @@
 # Iteración 07 · TypeScript y señales
 
-**Duración:** 45 min · **Temas del plan:** TypeScript, programación funcional en JavaScript (ES6+), gestión del estado, CSS Grid.
+**Clase:** martes 10 de noviembre · **Entra en:** parcial 2 · **Duración:** 45 min · **Temas del plan:** TypeScript, programación funcional en JavaScript (ES6+), gestión del estado, CSS Grid.
 
 ## Lo que vas a construir
 

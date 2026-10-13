@@ -1,6 +1,6 @@
 # Iteración 09 · Login contra la API
 
-**Duración:** 45 min · **Temas del plan:** asincronismo (Event Loop, Promises, async/await), consumo de APIs REST, contextos de ejecución.
+**Clase:** martes 10 de noviembre · **Entra en:** parcial 2 · **Duración:** 45 min · **Temas del plan:** asincronismo (Event Loop, Promises, async/await), consumo de APIs REST, contextos de ejecución.
 
 ## Lo que vas a construir
 
