@@ -10,6 +10,4 @@ import { AuthService } from './core/auth.service';
 })
 export class App {
   protected auth = inject(AuthService);
-  titulo = "Ricardo Andrés"
-
 }
