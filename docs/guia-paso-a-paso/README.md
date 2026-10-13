@@ -15,7 +15,7 @@ Son 15 iteraciones cortas (30 a 45 minutos cada una) más una opcional. Cada ite
 | **Conceptos** | La teoría mínima, explicada con el código del proyecto. |
 | **Paso a paso** | Archivos y comandos, en orden. |
 | **Comprueba** | Cómo saber que funciona. Si no ves lo que se describe, no sigas. |
-| **Para pensar** | Una o dos preguntas o retos cortos que obligan a usar lo aprendido. |
+| **Para pensar** | Preguntas y retos cortos que obligan a usar lo aprendido. En clase no siempre hay tiempo para hacerlos, pero de aquí salen las preguntas de los parciales. |
 | **Guarda tu avance** | El commit de Git de esa iteración. |
 
 ## Ruta
@@ -40,6 +40,39 @@ Son 15 iteraciones cortas (30 a 45 minutos cada una) más una opcional. Cada ite
 | 13 | [Panel de administración](13-panel-admin.md) | Roles en la interfaz, defensa en profundidad | Auditoría de seguridad |
 | 14 | [Cierre: pruebas, despliegue e IA](14-cierre.md) | Pruebas, build, CI/CD, auditoría asistida por IA | CI/CD, despliegue, auditoría con IA, Git |
 | + | [Extra: correos automáticos](extra-correos.md) | SMTP, tareas en segundo plano | Integración de servicios |
+
+## Cronograma 2026-2
+
+Clases los martes, 3 horas. Cada sesión cubre el *Paso a paso* y el *Comprueba* de sus iteraciones. Si no terminas en clase, termínalo antes de la siguiente: cada iteración depende de la anterior.
+
+| Fecha | Iteraciones | Al terminar tienes |
+|---|---|---|
+| Oct 13 | 00–01 (incluye instalar las herramientas) | Tu primera API corriendo en Docker |
+| Oct 20 | 02–04 | Base de datos, CRUD de tickets, registro y login |
+| Oct 27 | 05–06 | Backend completo con roles y el esqueleto en Angular |
+| **Nov 3** | **Parcial 1** (iteraciones 00–06) | |
+| Nov 10 | 07–09 | Pantallas con rutas y login real contra la API |
+| Nov 17 | 10–12 | Sesión, guards y tickets conectados |
+| Nov 24 | 13–14 y ponerse al día | Aplicación completa, pruebas y CI |
+| **Dic 1** | **Parcial 2** (todo el proyecto) | |
+
+La sesión del 24 de noviembre es más corta a propósito: deja margen para quien vaya atrasado antes del parcial final. La iteración extra de correos no está en el cronograma; es opcional.
+
+## Evaluación: el parcial es sobre tu proyecto
+
+Los parciales se hacen sobre **tu propio repositorio**, no sobre el de referencia. Para presentarlo necesitas:
+
+1. Tener en tu repositorio un commit por cada iteración evaluada, con las fechas en que trabajaste.
+2. Tener el proyecto corriendo en tu computador al empezar el parcial.
+
+En el parcial puede pasar cualquiera de estas cosas:
+
+- Explicar un archivo o un flujo de tu código (por ejemplo, qué pasa desde que oprimes *Entrar* hasta que ves los tickets).
+- Predecir qué código de estado responde la API en una situación dada, y luego comprobarlo.
+- Responder preguntas de las secciones *Antes de programar* y *Para pensar*.
+- Hacer un cambio pequeño en vivo y sin IA: un campo nuevo, un endpoint, un filtro, una regla de permisos.
+
+Si el código está en tu repositorio pero no lo puedes explicar, para la nota es como si no estuviera.
 
 ## Qué temas del plan quedan por fuera y por qué
 

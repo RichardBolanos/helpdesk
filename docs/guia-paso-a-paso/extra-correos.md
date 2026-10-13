@@ -2,7 +2,7 @@
 
 **Duración:** 40 min · **Temas del plan:** integración de servicios, rendimiento.
 
-Esta iteración es opcional. Hazla si tienes tiempo después de la 13 o como parte del proyecto final.
+Esta iteración es opcional. Hazla si tienes tiempo después de la 13; no está en el cronograma de clases.
 
 ## Lo que vas a construir
 

@@ -125,7 +125,7 @@ Sube tu repositorio a GitHub (crea el repositorio vacío en la página y sigue l
 
 ### Trabajo en equipo con Git
 
-Para el proyecto final, trabajen así:
+En un equipo de desarrollo (y si quieres practicarlo con las ideas del final de esta iteración) se trabaja así:
 
 1. Nadie trabaja directo en `main`. Cada funcionalidad va en su rama: `git switch -c feat/buscar-tickets`.
 2. Commits pequeños con mensajes que digan **qué** y **por qué**: `feat(web): filtro de tickets por título`.
@@ -210,9 +210,9 @@ Después de hacer tu lista, pégale el código a un asistente de IA y pídele qu
 
 </details>
 
-## Para cerrar: ideas para el proyecto final
+## Para ir más allá
 
-Cada una toca temas del plan de estudio. Antes de programar, escriban la especificación: qué cambia en la base de datos, qué endpoints nuevos se necesitan, quién puede usarlos y qué pantallas cambian.
+Son opcionales y cada una toca temas del plan de estudio. También son buen entrenamiento para el parcial 2, porque se parecen a los cambios en vivo que te pueden pedir. Antes de programar, escribe la especificación: qué cambia en la base de datos, qué endpoints nuevos se necesitan, quién puede usarlos y qué pantallas cambian.
 
 - **Comentarios en los tickets:** una tabla nueva, relación con tickets y usuarios, permisos por rol.
 - **Búsqueda y filtros:** por estado y prioridad, con `computed` en el frontend o con parámetros de consulta (`?status=open`) en el backend. ¿Cuándo conviene cada uno?
