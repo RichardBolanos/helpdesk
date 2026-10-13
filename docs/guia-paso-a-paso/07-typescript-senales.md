@@ -1,5 +1,7 @@
 # Iteración 07 · TypeScript y señales
 
+[← Tarea · JavaScript mínimo para Angular](06b-javascript-minimo.md) · [Índice](README.md) · [08 · Navegación con rutas →](08-rutas.md) <!-- nav -->
+
 **Clase:** martes 10 de noviembre · **Entra en:** parcial 2 · **Duración:** 45 min · **Temas del plan:** TypeScript, programación funcional en JavaScript (ES6+), gestión del estado, CSS Grid.
 
 > **Requisito:** haber hecho la tarea [JavaScript mínimo](06b-javascript-minimo.md). Aquí se usan [clases y `this`](06b-javascript-minimo.md#9-clases-y-this), [funciones flecha](06b-javascript-minimo.md#4-funciones-flecha), [métodos de arreglos](06b-javascript-minimo.md#6-métodos-de-arreglos), [spread y rest](06b-javascript-minimo.md#7-spread-rest-y-atajos-de-objetos), [módulos](06b-javascript-minimo.md#10-módulos-import-y-export).
@@ -78,6 +80,8 @@ list.map((x) => x.id === 2 ? cambiado : x)   // lista nueva con el elemento 2 re
 | `{{ valor \| date: 'short' }}` | **Pipe**: transforma un valor para mostrarlo | Fecha ISO → `10/10/26, 9:30 AM` |
 
 `track x.id` le dice a Angular cómo reconocer cada elemento. Así, si agregas un ticket, no redibuja toda la tabla, solo la fila nueva.
+
+![Interpolación, enlace de propiedad, evento y doble vía entre la clase y la plantilla; al actualizar una señal Angular redibuja lo que la usa](img/07-bindings-senales.svg)
 
 ## Paso a paso
 
@@ -312,3 +316,7 @@ Y en `src/app/app.html`, dentro de `<main>`, debajo del `<router-outlet />`:
 git add .
 git commit -m "feat(web): pantalla de tickets con datos de prueba y signals"
 ```
+
+---
+
+[← Tarea · JavaScript mínimo para Angular](06b-javascript-minimo.md) · [Índice](README.md) · [08 · Navegación con rutas →](08-rutas.md) <!-- nav -->

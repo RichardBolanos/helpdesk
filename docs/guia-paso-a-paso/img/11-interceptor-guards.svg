@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="480" viewBox="0 0 960 480" role="img">
+  <title>Interceptor y guards: el interceptor agrega el token a cada petición y maneja el 401; el guard decide si se carga una ruta o se redirige</title>
+  <style>
+    text { font-family: Segoe UI, Helvetica, Arial, sans-serif; font-size: 15px; fill: #0f172a; }
+    .ttl { font-size: 24px; font-weight: 700; }
+    .h { font-size: 16px; font-weight: 700; fill: #1e293b; }
+    .bd { font-weight: 700; }
+    .n { font-size: 13px; fill: #475569; }
+    .c { font-family: Consolas, Menlo, monospace; font-size: 14px; }
+    .m { text-anchor: middle; }
+  </style>
+  <defs>
+    <marker id="aDark" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="10" markerHeight="10" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#1e293b"/></marker>
+    <marker id="aGray" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="10" markerHeight="10" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#475569"/></marker>
+    <marker id="aGreen" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="10" markerHeight="10" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#16a34a"/></marker>
+    <marker id="aYellow" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="10" markerHeight="10" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#a16207"/></marker>
+  </defs>
+
+  <rect x="0.5" y="0.5" width="959" height="479" rx="12" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+  <text x="32" y="46" class="ttl">Interceptor y guards</text>
+
+  <!-- Peticiones HTTP -->
+  <text x="32" y="84" class="h">Peticiones HTTP</text>
+
+  <rect x="48" y="100" width="160" height="72" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+  <text x="128" y="141" class="m bd">Componente</text>
+  <rect x="288" y="100" width="160" height="72" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+  <text x="368" y="141" class="m bd">Servicio</text>
+  <rect x="528" y="100" width="160" height="72" rx="10" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="608" y="141" class="m bd" fill="#2563eb" style="fill:#2563eb">Interceptor</text>
+  <rect x="768" y="100" width="160" height="72" rx="10" fill="#1e293b" stroke="#1e293b" stroke-width="1.5"/>
+  <text x="848" y="141" class="m bd" style="fill:#ffffff">API</text>
+
+  <!-- ida -->
+  <line x1="210" y1="122" x2="286" y2="122" stroke="#1e293b" stroke-width="2" marker-end="url(#aDark)"/>
+  <line x1="450" y1="122" x2="526" y2="122" stroke="#1e293b" stroke-width="2" marker-end="url(#aDark)"/>
+  <line x1="690" y1="122" x2="766" y2="122" stroke="#1e293b" stroke-width="2" marker-end="url(#aDark)"/>
+  <text x="248" y="114" class="n m">petición</text>
+  <text x="488" y="114" class="n m">petición</text>
+  <text x="728" y="114" class="n m">petición</text>
+
+  <!-- vuelta -->
+  <line x1="766" y1="152" x2="690" y2="152" stroke="#475569" stroke-width="2" marker-end="url(#aGray)"/>
+  <line x1="526" y1="152" x2="450" y2="152" stroke="#475569" stroke-width="2" marker-end="url(#aGray)"/>
+  <line x1="286" y1="152" x2="210" y2="152" stroke="#475569" stroke-width="2" marker-end="url(#aGray)"/>
+  <text x="248" y="168" class="n m">respuesta</text>
+  <text x="488" y="168" class="n m">respuesta</text>
+  <text x="728" y="168" class="n m">respuesta</text>
+
+  <!-- notas del interceptor -->
+  <line x1="575" y1="172" x2="520" y2="200" stroke="#2563eb" stroke-width="1.5" stroke-dasharray="4 3"/>
+  <line x1="645" y1="172" x2="700" y2="200" stroke="#a16207" stroke-width="1.5" stroke-dasharray="4 3"/>
+  <rect x="290" y="200" width="310" height="40" rx="10" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="304" y="225">agrega <tspan class="c">Authorization: Bearer ...</tspan></text>
+  <rect x="618" y="200" width="310" height="40" rx="10" fill="#fef9c3" stroke="#a16207" stroke-width="1.5"/>
+  <text x="632" y="225">si es 401 y había token: <tspan class="c">logout()</tspan></text>
+
+  <!-- Navegación -->
+  <line x1="32" y1="262" x2="928" y2="262" stroke="#e2e8f0" stroke-width="1.5"/>
+  <text x="32" y="294" class="h">Navegación</text>
+
+  <rect x="48" y="314" width="220" height="56" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+  <text x="158" y="347" class="m">el usuario va a <tspan class="c">/users</tspan></text>
+  <line x1="270" y1="342" x2="326" y2="342" stroke="#1e293b" stroke-width="2" marker-end="url(#aDark)"/>
+  <rect x="328" y="314" width="200" height="56" rx="10" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="428" y="347" class="m c">roleGuard('admin')</text>
+
+  <line x1="530" y1="336" x2="588" y2="321" stroke="#16a34a" stroke-width="2" marker-end="url(#aGreen)"/>
+  <line x1="530" y1="348" x2="588" y2="371" stroke="#a16207" stroke-width="2" marker-end="url(#aYellow)"/>
+  <rect x="590" y="302" width="340" height="38" rx="10" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+  <text x="604" y="326"><tspan class="c bd">true</tspan>: carga el componente</text>
+  <rect x="590" y="352" width="340" height="38" rx="10" fill="#fef9c3" stroke="#a16207" stroke-width="1.5"/>
+  <text x="604" y="376"><tspan class="c bd">UrlTree</tspan>: redirige a /login o /tickets</text>
+
+  <!-- Pie -->
+  <rect x="32" y="412" width="896" height="44" rx="10" fill="#fee2e2" stroke="#dc2626" stroke-width="1.5"/>
+  <text x="480" y="439" class="m">Los guards deciden qué pantalla se ve. <tspan class="bd">La seguridad está en el backend.</tspan></text>
+</svg>

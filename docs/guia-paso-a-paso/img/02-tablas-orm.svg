@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="496" viewBox="0 0 960 496" role="img">
+  <title>Del modelo ORM a las tablas: las clases User y Ticket de Python se convierten en las tablas users y tickets, unidas por una llave foránea</title>
+  <style>
+    text { font-family: "Segoe UI", Helvetica, Arial, sans-serif; font-size: 15px; fill: #0f172a; }
+    .t { font-size: 24px; font-weight: 700; }
+    .b { font-weight: 700; }
+    .n { font-size: 13px; fill: #475569; }
+    .c { font-family: Consolas, Menlo, monospace; font-size: 14px; }
+    .ck { font-family: Consolas, Menlo, monospace; font-size: 14px; fill: #2563eb; font-weight: 700; }
+    .tn { font-family: Consolas, Menlo, monospace; font-size: 16px; font-weight: 700; }
+    .m { text-anchor: middle; }
+    .lbl { font-size: 14px; font-weight: 700; fill: #2563eb; }
+    .tag { font-size: 12px; font-weight: 700; fill: #a16207; }
+    .grid { stroke: #cbd5e1; stroke-width: 1; }
+  </style>
+  <defs>
+    <marker id="aBlue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#2563eb"/></marker>
+    <marker id="aYellow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#a16207"/></marker>
+  </defs>
+  <rect x="0.5" y="0.5" width="959" height="495" rx="12" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+  <text x="32" y="46" class="t">De clases de Python a tablas</text>
+
+  <!-- Code: User -->
+  <rect x="32" y="80" width="260" height="171" rx="10" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.5"/>
+  <text x="48" y="104" class="ck">class User(Base):</text>
+  <text x="80" y="125" class="c">id</text>
+  <text x="80" y="146" class="c">name</text>
+  <text x="80" y="167" class="c">email</text>
+  <text x="80" y="188" class="c">password_hash</text>
+  <text x="80" y="209" class="c">role</text>
+  <text x="80" y="230" class="c">is_active</text>
+
+  <!-- Code: Ticket -->
+  <rect x="32" y="275" width="260" height="192" rx="10" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.5"/>
+  <text x="48" y="299" class="ck">class Ticket(Base):</text>
+  <text x="80" y="320" class="c">id</text>
+  <text x="80" y="341" class="c">title</text>
+  <text x="80" y="362" class="c">description</text>
+  <text x="80" y="383" class="c">priority</text>
+  <text x="80" y="404" class="c">status</text>
+  <text x="80" y="425" class="c">created_at</text>
+  <text x="80" y="446" class="c">author_id</text>
+
+  <!-- Mapping arrows -->
+  <text x="446" y="90" class="lbl m">clase = tabla</text>
+  <line x1="246" y1="99" x2="590" y2="99" stroke="#2563eb" stroke-width="2" marker-end="url(#aBlue)"/>
+  <text x="446" y="140" class="lbl m">atributo = columna</text>
+  <line x1="130" y1="146" x2="596" y2="152" stroke="#2563eb" stroke-width="2" marker-end="url(#aBlue)"/>
+  <text x="446" y="368" class="lbl m">objeto = fila</text>
+  <line x1="300" y1="377" x2="596" y2="377" stroke="#2563eb" stroke-width="2" marker-end="url(#aBlue)"/>
+
+  <!-- Table users -->
+  <text x="600" y="94" class="tn">users</text>
+  <rect x="600" y="106" width="108" height="22" rx="11" fill="#fef9c3" stroke="#a16207" stroke-width="1"/>
+  <text x="654" y="121" class="tag m">llave primaria</text>
+  <line x1="625" y1="128" x2="625" y2="136" stroke="#a16207" stroke-width="1.5"/>
+  <rect x="600" y="136" width="328" height="32" fill="#e2e8f0"/>
+  <rect x="600" y="136" width="50" height="32" fill="#fef9c3"/>
+  <rect x="600" y="136" width="328" height="92" fill="none" stroke="#475569" stroke-width="1.5"/>
+  <line class="grid" x1="600" y1="168" x2="928" y2="168"/>
+  <line class="grid" x1="600" y1="198" x2="928" y2="198"/>
+  <line class="grid" x1="650" y1="136" x2="650" y2="228"/>
+  <line class="grid" x1="790" y1="136" x2="790" y2="228"/>
+  <text x="625" y="157" class="c b m">id</text>
+  <text x="662" y="157" class="c b">name</text>
+  <text x="802" y="157" class="c b">role</text>
+  <text x="625" y="188" class="m">1</text>
+  <text x="662" y="188">Admin</text>
+  <text x="802" y="188">admin</text>
+  <text x="625" y="218" class="m">2</text>
+  <text x="662" y="218">Ana</text>
+  <text x="802" y="218">user</text>
+
+  <!-- Table tickets -->
+  <text x="600" y="288" class="tn">tickets</text>
+  <rect x="600" y="300" width="108" height="22" rx="11" fill="#fef9c3" stroke="#a16207" stroke-width="1"/>
+  <text x="654" y="315" class="tag m">llave primaria</text>
+  <line x1="625" y1="322" x2="625" y2="330" stroke="#a16207" stroke-width="1.5"/>
+  <rect x="600" y="330" width="328" height="32" fill="#e2e8f0"/>
+  <rect x="600" y="330" width="50" height="32" fill="#fef9c3"/>
+  <rect x="830" y="330" width="98" height="32" fill="#fef9c3"/>
+  <rect x="600" y="330" width="328" height="122" fill="none" stroke="#475569" stroke-width="1.5"/>
+  <line class="grid" x1="600" y1="362" x2="928" y2="362"/>
+  <line class="grid" x1="600" y1="392" x2="928" y2="392"/>
+  <line class="grid" x1="600" y1="422" x2="928" y2="422"/>
+  <line class="grid" x1="650" y1="330" x2="650" y2="452"/>
+  <line class="grid" x1="830" y1="330" x2="830" y2="452"/>
+  <text x="625" y="351" class="c b m">id</text>
+  <text x="662" y="351" class="c b">title</text>
+  <text x="879" y="351" class="c b m">author_id</text>
+  <text x="625" y="382" class="m">1</text>
+  <text x="662" y="382">No prende el PC</text>
+  <text x="879" y="382" class="m">2</text>
+  <text x="625" y="412" class="m">2</text>
+  <text x="662" y="412">Sin internet</text>
+  <text x="879" y="412" class="m">2</text>
+  <text x="625" y="442" class="m">3</text>
+  <text x="662" y="442">Impresora</text>
+  <text x="879" y="442" class="m">1</text>
+
+  <!-- Foreign key -->
+  <path d="M879,330 V262 H625 V232" fill="none" stroke="#a16207" stroke-width="2" marker-end="url(#aYellow)"/>
+  <text x="752" y="254" class="lbl m" style="fill:#a16207">llave foránea</text>
+</svg>

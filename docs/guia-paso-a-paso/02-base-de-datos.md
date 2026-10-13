@@ -1,5 +1,7 @@
 # Iteración 02 · Base de datos y modelos
 
+[← 01 · Tu primera API](01-primera-api.md) · [Índice](README.md) · [03 · CRUD de tickets →](03-crud-tickets.md) <!-- nav -->
+
 **Clase:** martes 20 de octubre · **Entra en:** parcial 1 · **Duración:** 45 min · **Temas del plan:** arquitectura de sistemas web, seguridad de datos.
 
 ## Lo que vas a construir
@@ -21,16 +23,7 @@ Una base de datos relacional guarda la información en **tablas**: filas (regist
 - La **llave primaria** (`id`) identifica cada fila de forma única.
 - La **llave foránea** (`author_id`) es una columna que guarda el `id` de una fila de otra tabla. Así el ticket apunta a su autor sin copiar sus datos. Si el autor cambia de nombre, se cambia en un solo lugar.
 
-```
-users                              tickets
-┌────┬───────┬─────────┐          ┌────┬──────────────┬───────────┐
-│ id │ name  │ role    │          │ id │ title        │ author_id │
-├────┼───────┼─────────┤          ├────┼──────────────┼───────────┤
-│ 1  │ Admin │ admin   │ ◀──┐     │ 1  │ No prende PC │ 2         │
-│ 2  │ Ana   │ user    │ ◀──┼──── │ 2  │ Sin internet │ 2         │
-└────┴───────┴─────────┘    └──── │ 3  │ Impresora    │ 1         │
-                                  └────┴──────────────┴───────────┘
-```
+![Las clases User y Ticket se convierten en las tablas users y tickets; author_id es una llave foránea hacia users.id](img/02-tablas-orm.svg)
 
 ### ORM: tablas como clases
 
@@ -145,6 +138,8 @@ Detalles que importan:
 - `5433:5432`: desde tu PC entras por el 5433 (para no chocar si ya tienes un PostgreSQL instalado); entre contenedores se usa el 5432.
 - `pgdata` es un **volumen**: guarda los datos fuera del contenedor. Si borras el contenedor, los datos siguen ahí.
 - `healthcheck` + `depends_on`: la API espera a que la base de datos esté lista para recibir conexiones.
+
+![Dentro de Docker la API llega a la base de datos por el nombre db y el puerto 5432; desde tu PC se entra por localhost:8000 y localhost:5433](img/02-docker-red.svg)
 
 ### 3. Conexión a la base de datos
 
@@ -359,3 +354,7 @@ Si prefieres algo visual, conéctate con DBeaver a `localhost:5433` con el usuar
 git add .
 git commit -m "feat(api): PostgreSQL, modelos y admin inicial"
 ```
+
+---
+
+[← 01 · Tu primera API](01-primera-api.md) · [Índice](README.md) · [03 · CRUD de tickets →](03-crud-tickets.md) <!-- nav -->

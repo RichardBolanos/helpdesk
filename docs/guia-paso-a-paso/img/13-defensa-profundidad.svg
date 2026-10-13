@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="476" viewBox="0 0 960 476" role="img">
+  <title>Defensa en profundidad: tres capas de frontend que se pueden saltar desde el navegador y dos capas de backend que detienen el ataque</title>
+  <style>
+    text { font-family: Segoe UI, Helvetica, Arial, sans-serif; font-size: 15px; fill: #0f172a; }
+    .ttl { font-size: 24px; font-weight: 700; }
+    .bd { font-weight: 700; }
+    .n { font-size: 13px; fill: #475569; }
+    .c { font-family: Consolas, Menlo, monospace; font-size: 14px; }
+    .m { text-anchor: middle; }
+    .e { text-anchor: end; }
+    .num { font-size: 13px; font-weight: 700; fill: #ffffff; text-anchor: middle; }
+    .fe { fill: #fef9c3; stroke: #a16207; stroke-width: 1.5; }
+    .be { fill: #dcfce7; stroke: #16a34a; stroke-width: 1.5; }
+    .pill { fill: #ffffff; stroke-width: 1.5; }
+    .si { font-weight: 700; fill: #dc2626; }
+    .no { font-weight: 700; fill: #16a34a; }
+  </style>
+  <defs>
+    <marker id="aRed" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="12" markerHeight="12" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#dc2626"/></marker>
+  </defs>
+
+  <rect x="0.5" y="0.5" width="959" height="475" rx="12" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+  <text x="32" y="46" class="ttl">Defensa en profundidad</text>
+
+  <!-- Encabezados de columna -->
+  <text x="194" y="98" class="n">Capa</text>
+  <text x="525" y="98" class="n m">Dónde vive</text>
+  <text x="908" y="98" class="n e">¿se puede saltar desde el navegador?</text>
+
+  <!-- Etiquetas laterales -->
+  <path d="M146,112 H140 V304 H146" fill="none" stroke="#a16207" stroke-width="2"/>
+  <text x="130" y="213" class="bd e" style="fill:#a16207">comodidad</text>
+  <path d="M146,328 H140 V452 H146" fill="none" stroke="#16a34a" stroke-width="2"/>
+  <text x="130" y="395" class="bd e" style="fill:#16a34a">seguridad</text>
+
+  <!-- Capa 1 -->
+  <rect x="150" y="112" width="778" height="56" rx="10" class="fe"/>
+  <circle cx="172" cy="140" r="12" fill="#a16207"/><text x="172" y="145" class="num">1</text>
+  <text x="194" y="145" class="bd">Ocultar el enlace Usuarios</text>
+  <rect x="480" y="128" width="90" height="24" rx="12" class="pill" stroke="#a16207"/>
+  <text x="525" y="145" class="n m" style="fill:#a16207">Frontend</text>
+  <text x="908" y="145" class="e"><tspan class="si">Sí</tspan> (editando el LocalStorage)</text>
+
+  <!-- Capa 2 -->
+  <rect x="150" y="180" width="778" height="56" rx="10" class="fe"/>
+  <circle cx="172" cy="208" r="12" fill="#a16207"/><text x="172" y="213" class="num">2</text>
+  <text x="194" y="213" class="c">roleGuard('admin')</text>
+  <rect x="480" y="196" width="90" height="24" rx="12" class="pill" stroke="#a16207"/>
+  <text x="525" y="213" class="n m" style="fill:#a16207">Frontend</text>
+  <text x="908" y="213" class="e"><tspan class="si">Sí</tspan> (editando el LocalStorage)</text>
+
+  <!-- Capa 3 -->
+  <rect x="150" y="248" width="778" height="56" rx="10" class="fe"/>
+  <circle cx="172" cy="276" r="12" fill="#a16207"/><text x="172" y="281" class="num">3</text>
+  <text x="194" y="281"><tspan class="c">[disabled]</tspan><tspan class="bd"> en tu propia fila</tspan></text>
+  <rect x="480" y="264" width="90" height="24" rx="12" class="pill" stroke="#a16207"/>
+  <text x="525" y="281" class="n m" style="fill:#a16207">Frontend</text>
+  <text x="908" y="281" class="e"><tspan class="si">Sí</tspan> (borrando el atributo)</text>
+
+  <!-- Capa 4 -->
+  <rect x="150" y="328" width="778" height="56" rx="10" class="be"/>
+  <circle cx="172" cy="356" r="12" fill="#16a34a"/><text x="172" y="361" class="num">4</text>
+  <text x="194" y="361"><tspan class="c">require_roles(Role.admin)</tspan><tspan class="bd"> → 403</tspan></text>
+  <rect x="480" y="344" width="90" height="24" rx="12" class="pill" stroke="#16a34a"/>
+  <text x="525" y="361" class="n m" style="fill:#16a34a">Backend</text>
+  <text x="908" y="361" class="e no">No</text>
+
+  <!-- Capa 5 -->
+  <rect x="150" y="396" width="778" height="56" rx="10" class="be"/>
+  <circle cx="172" cy="424" r="12" fill="#16a34a"/><text x="172" y="429" class="num">5</text>
+  <text x="194" y="429"><tspan class="c">if user_id == admin.id</tspan><tspan class="bd"> → 400</tspan></text>
+  <rect x="480" y="412" width="90" height="24" rx="12" class="pill" stroke="#16a34a"/>
+  <text x="525" y="429" class="n m" style="fill:#16a34a">Backend</text>
+  <text x="908" y="429" class="e no">No</text>
+
+  <!-- Ataque -->
+  <text x="632" y="80" class="n bd" style="fill:#dc2626">ataque</text>
+  <line x1="620" y1="64" x2="620" y2="336" stroke="#dc2626" stroke-width="2" marker-end="url(#aRed)"/>
+  <line x1="609" y1="345" x2="631" y2="367" stroke="#dc2626" stroke-width="4" stroke-linecap="round"/>
+  <line x1="631" y1="345" x2="609" y2="367" stroke="#dc2626" stroke-width="4" stroke-linecap="round"/>
+</svg>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="592" viewBox="0 0 960 592" role="img">
+  <title>Puertos y nombres en Docker: el navegador y DBeaver entran por localhost, y dentro de la red de Docker la API llega a la base de datos por el nombre db</title>
+  <style>
+    text { font-family: "Segoe UI", Helvetica, Arial, sans-serif; font-size: 15px; fill: #0f172a; }
+    .t { font-size: 24px; font-weight: 700; }
+    .b { font-weight: 700; }
+    .n { font-size: 13px; fill: #475569; }
+    .c { font-family: Consolas, Menlo, monospace; font-size: 14px; }
+    .cs { font-family: Consolas, Menlo, monospace; font-size: 13px; }
+    .m { text-anchor: middle; }
+    .lbl { font-size: 14px; font-weight: 700; fill: #475569; }
+  </style>
+  <defs>
+    <marker id="aBlue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#2563eb"/></marker>
+    <marker id="aDark" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#1e293b"/></marker>
+  </defs>
+  <rect x="0.5" y="0.5" width="959" height="591" rx="12" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+  <text x="32" y="46" class="t">Puertos y nombres dentro de Docker</text>
+
+  <!-- Tu computador -->
+  <rect x="32" y="70" width="896" height="460" rx="10" fill="#f8fafc" stroke="#475569" stroke-width="1.5"/>
+  <text x="52" y="96" class="lbl">Tu computador</text>
+
+  <!-- Docker network -->
+  <rect x="420" y="110" width="484" height="400" rx="10" fill="#ffffff" stroke="#2563eb" stroke-width="1.5" stroke-dasharray="7 5"/>
+  <text x="440" y="136" class="lbl" style="fill:#2563eb">Red de Docker</text>
+
+  <rect x="450" y="156" width="230" height="64" rx="10" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+  <text x="565" y="182" class="b m">api</text>
+  <text x="565" y="205" class="n m">contenedor · puerto 8000</text>
+
+  <rect x="450" y="320" width="230" height="64" rx="10" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="565" y="346" class="b m">db</text>
+  <text x="565" y="369" class="n m">contenedor · puerto 5432</text>
+
+  <line x1="565" y1="220" x2="565" y2="318" stroke="#1e293b" stroke-width="2" marker-end="url(#aDark)"/>
+  <rect x="578" y="246" width="84" height="24" rx="6" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="620" y="263" class="c m">@db:5432</text>
+  <text x="578" y="290" class="n">dentro de Docker se usa</text>
+  <text x="578" y="306" class="n">el nombre del servicio</text>
+
+  <!-- Volume -->
+  <line x1="565" y1="384" x2="565" y2="420" stroke="#1e293b" stroke-width="2"/>
+  <path d="M490,432 a75,12 0 0 1 150,0 v50 a75,12 0 0 1 -150,0 z" fill="#fef9c3" stroke="#a16207" stroke-width="1.5"/>
+  <ellipse cx="565" cy="432" rx="75" ry="12" fill="#fef9c3" stroke="#a16207" stroke-width="1.5"/>
+  <text x="565" y="465" class="m">volumen</text>
+  <text x="565" y="484" class="c m">pgdata</text>
+  <text x="656" y="456" class="n">los datos sobreviven aunque</text>
+  <text x="656" y="472" class="n">borres el contenedor</text>
+
+  <!-- Navegador -->
+  <rect x="60" y="156" width="170" height="64" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+  <text x="145" y="193" class="b m">Navegador</text>
+  <line x1="230" y1="188" x2="448" y2="188" stroke="#2563eb" stroke-width="2" marker-end="url(#aBlue)"/>
+  <text x="330" y="178" class="c m">localhost:8000</text>
+  <rect x="279" y="198" width="102" height="24" rx="12" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="330" y="215" class="cs m">"8000:8000"</text>
+
+  <!-- DBeaver -->
+  <rect x="60" y="320" width="170" height="64" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+  <text x="145" y="357" class="b m">DBeaver / psql</text>
+  <line x1="230" y1="352" x2="448" y2="352" stroke="#2563eb" stroke-width="2" marker-end="url(#aBlue)"/>
+  <text x="330" y="342" class="c m">localhost:5433</text>
+  <rect x="279" y="362" width="102" height="24" rx="12" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="330" y="379" class="cs m">"5433:5432"</text>
+
+  <!-- Legend -->
+  <rect x="32" y="546" width="102" height="26" rx="13" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1"/>
+  <text x="83" y="564" class="cs m">"5433:5432"</text>
+  <text x="146" y="564">= puerto de tu PC : puerto del contenedor</text>
+</svg>

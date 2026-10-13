@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="448" viewBox="0 0 960 448" role="img">
+  <title>Un componente y la estructura de la app: archivos de un componente Angular y maqueta de la cabecera con flexbox y el router-outlet</title>
+  <style>
+    .s { font-family: Segoe UI, Helvetica, Arial, sans-serif; }
+    .m { font-family: Consolas, Menlo, monospace; }
+  </style>
+  <defs>
+    <marker id="arrDark" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#1e293b"/></marker>
+  </defs>
+  <rect x="0.5" y="0.5" width="959" height="447" rx="12" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+  <text class="s" x="32" y="46" font-size="24" font-weight="bold" fill="#0f172a">Un componente y la estructura de la app</text>
+
+  <!-- Left: file cards -->
+  <rect x="32" y="84" width="260" height="56" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+  <text class="m" x="48" y="106" font-size="14" font-weight="bold" fill="#2563eb">app.ts</text>
+  <text class="s" x="48" y="127" font-size="13" fill="#475569">la clase: datos y comportamiento</text>
+
+  <rect x="32" y="156" width="260" height="56" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+  <text class="m" x="48" y="178" font-size="14" font-weight="bold" fill="#2563eb">app.html</text>
+  <text class="s" x="48" y="199" font-size="13" fill="#475569">la plantilla: qué se dibuja</text>
+
+  <rect x="32" y="228" width="260" height="56" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+  <text class="m" x="48" y="250" font-size="14" font-weight="bold" fill="#2563eb">app.css</text>
+  <text class="s" x="48" y="271" font-size="13" fill="#475569">estilos solo de este componente</text>
+
+  <!-- Brace -->
+  <path d="M298 86 Q308 86 308 98 L308 172 Q308 184 318 184 Q308 184 308 196 L308 270 Q308 282 298 282" fill="none" stroke="#475569" stroke-width="2"/>
+
+  <!-- @Component -->
+  <rect x="326" y="161" width="130" height="46" rx="10" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+  <text class="m" x="391" y="189" font-size="14" font-weight="bold" text-anchor="middle" fill="#0f172a">@Component</text>
+  <line x1="391" y1="207" x2="391" y2="318" stroke="#1e293b" stroke-width="2" marker-end="url(#arrDark)"/>
+
+  <!-- app-root -->
+  <rect x="326" y="320" width="130" height="46" rx="10" fill="#1e293b" stroke="#1e293b" stroke-width="1.5"/>
+  <text class="m" x="391" y="348" font-size="14" font-weight="bold" text-anchor="middle" fill="#ffffff">&lt;app-root&gt;</text>
+  <text class="s" x="310" y="338" font-size="13" text-anchor="end" fill="#475569">en index.html:</text>
+  <text class="s" x="310" y="356" font-size="13" text-anchor="end" fill="#475569">aquí Angular dibuja todo</text>
+
+  <!-- Right: annotations -->
+  <text class="m" x="488" y="84" font-size="14" fill="#2563eb">display: flex</text>
+  <text class="s" x="488" y="102" font-size="13" fill="#475569">Bootstrap: <tspan class="m" fill="#0f172a">d-flex</tspan></text>
+  <line x1="500" y1="108" x2="500" y2="160" stroke="#475569" stroke-width="1"/>
+
+  <text class="m" x="600" y="116" font-size="14" fill="#2563eb">flex: 1</text>
+  <text class="s" x="600" y="134" font-size="13" fill="#475569">Bootstrap: <tspan class="m" fill="#0f172a">flex-grow-1</tspan></text>
+  <line x1="650" y1="140" x2="650" y2="170" stroke="#475569" stroke-width="1"/>
+
+  <text class="m" x="928" y="84" font-size="14" text-anchor="end" fill="#2563eb">margin-left: auto</text>
+  <text class="s" x="928" y="102" font-size="13" text-anchor="end" fill="#475569">Bootstrap: <tspan class="m" fill="#0f172a">ms-auto</tspan></text>
+  <line x1="848" y1="108" x2="848" y2="168" stroke="#475569" stroke-width="1"/>
+
+  <!-- Wireframe frame -->
+  <rect x="488" y="160" width="440" height="260" rx="10" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5"/>
+  <rect x="488" y="160" width="440" height="48" rx="10" fill="#1e293b"/>
+  <rect x="488" y="190" width="440" height="18" fill="#1e293b"/>
+  <circle cx="500" cy="160" r="3" fill="#475569"/>
+
+  <text class="s" x="502" y="190" font-size="16" font-weight="bold" fill="#ffffff">HelpDesk</text>
+
+  <rect x="584" y="170" width="146" height="28" rx="6" fill="none" stroke="#94a3b8" stroke-width="1" stroke-dasharray="4 3"/>
+  <text class="s" x="594" y="189" font-size="14" fill="#e2e8f0">Tickets</text>
+  <text class="s" x="660" y="189" font-size="14" fill="#e2e8f0">Usuarios</text>
+
+  <rect x="772" y="168" width="152" height="32" rx="6" fill="none" stroke="#94a3b8" stroke-width="1" stroke-dasharray="4 3"/>
+  <text class="s" x="782" y="189" font-size="14" fill="#ffffff">Ana</text>
+  <rect x="814" y="174" width="48" height="20" rx="10" fill="#fef9c3" stroke="#a16207" stroke-width="1"/>
+  <text class="s" x="838" y="188" font-size="12" text-anchor="middle" fill="#a16207">agent</text>
+  <rect x="868" y="173" width="48" height="22" rx="6" fill="#64748b"/>
+  <text class="s" x="892" y="188" font-size="12" text-anchor="middle" fill="#ffffff">Salir</text>
+
+  <!-- main -->
+  <text class="m" x="502" y="232" font-size="13" fill="#475569">&lt;main&gt;</text>
+  <rect x="512" y="246" width="392" height="150" rx="10" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5" stroke-dasharray="6 4"/>
+  <text class="m" x="708" y="314" font-size="14" font-weight="bold" text-anchor="middle" fill="#0f172a">&lt;router-outlet /&gt;</text>
+  <text class="s" x="708" y="340" font-size="15" text-anchor="middle" fill="#0f172a">aquí cambia la pantalla según la ruta</text>
+</svg>

@@ -1,5 +1,7 @@
 # Iteración 01 · Tu primera API
 
+[← 00 · Antes de empezar](00-antes-de-empezar.md) · [Índice](README.md) · [02 · Base de datos y modelos →](02-base-de-datos.md) <!-- nav -->
+
 **Clase:** martes 13 de octubre · **Entra en:** parcial 1 · **Duración:** 40 min · **Temas del plan:** protocolo HTTP/HTTPS, modelo cliente-servidor.
 
 ## Lo que vas a construir
@@ -34,6 +36,8 @@ Content-Type: application/json            ← cabeceras
 
 {"id": 7, "title": "No prende el PC"}     ← cuerpo
 ```
+
+![Una petición HTTP con método, cabeceras y cuerpo, y su respuesta con código de estado; familias 2xx, 4xx y 5xx](img/01-http.svg)
 
 ### Métodos: qué quiere hacer el cliente
 
@@ -170,3 +174,7 @@ Si algo falla, mira los registros: `docker compose logs -f api`.
 git add .
 git commit -m "feat(api): primera API con FastAPI en Docker"
 ```
+
+---
+
+[← 00 · Antes de empezar](00-antes-de-empezar.md) · [Índice](README.md) · [02 · Base de datos y modelos →](02-base-de-datos.md) <!-- nav -->

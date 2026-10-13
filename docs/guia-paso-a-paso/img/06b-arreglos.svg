@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="468" viewBox="0 0 960 468" role="img">
+  <title>Métodos de arreglos: filter, map y spread siempre devuelven un arreglo nuevo sin modificar el original</title>
+  <style>
+    .s { font-family: Segoe UI, Helvetica, Arial, sans-serif; }
+    .m { font-family: Consolas, Menlo, monospace; }
+  </style>
+  <defs>
+    <marker id="arrDark" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#1e293b"/></marker>
+  </defs>
+  <rect x="0.5" y="0.5" width="959" height="467" rx="12" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+  <text class="s" x="32" y="46" font-size="24" font-weight="bold" fill="#0f172a">Métodos de arreglos: siempre devuelven uno nuevo</text>
+
+  <!-- Original -->
+  <text class="m" x="32" y="96" font-size="15" font-weight="bold" fill="#0f172a">tickets</text>
+  <text class="s" x="106" y="96" font-size="13" fill="#475569">lista original</text>
+  <rect x="524" y="74" width="92" height="32" rx="10" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+  <text class="m" x="570" y="95" font-size="13" text-anchor="middle" fill="#0f172a">#1 closed</text>
+  <rect x="628" y="74" width="92" height="32" rx="10" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+  <text class="m" x="674" y="95" font-size="13" text-anchor="middle" fill="#0f172a">#2 open</text>
+  <rect x="732" y="74" width="92" height="32" rx="10" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+  <text class="m" x="778" y="95" font-size="13" text-anchor="middle" fill="#0f172a">#3 open</text>
+  <line x1="32" y1="120" x2="928" y2="120" stroke="#e2e8f0" stroke-width="1"/>
+
+  <!-- Row 1: filter -->
+  <rect x="32" y="134" width="420" height="40" rx="10" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.5"/>
+  <text class="m" x="46" y="159" font-size="14" fill="#0f172a">tickets.filter((t) =&gt; t.status === 'open')</text>
+  <line x1="462" y1="154" x2="514" y2="154" stroke="#1e293b" stroke-width="2" marker-end="url(#arrDark)"/>
+  <rect x="524" y="138" width="92" height="32" rx="10" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+  <text class="m" x="570" y="159" font-size="13" text-anchor="middle" fill="#0f172a">#2 open</text>
+  <rect x="628" y="138" width="92" height="32" rx="10" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+  <text class="m" x="674" y="159" font-size="13" text-anchor="middle" fill="#0f172a">#3 open</text>
+
+  <!-- Row 2: map titles -->
+  <rect x="32" y="190" width="420" height="40" rx="10" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.5"/>
+  <text class="m" x="46" y="215" font-size="14" fill="#0f172a">tickets.map((t) =&gt; t.title)</text>
+  <line x1="462" y1="210" x2="514" y2="210" stroke="#1e293b" stroke-width="2" marker-end="url(#arrDark)"/>
+  <rect x="524" y="194" width="128" height="32" rx="10" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.5"/>
+  <text class="m" x="588" y="215" font-size="13" text-anchor="middle" fill="#0f172a">'Impresora'</text>
+  <rect x="662" y="194" width="128" height="32" rx="10" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.5"/>
+  <text class="m" x="726" y="215" font-size="13" text-anchor="middle" fill="#0f172a">'Sin internet'</text>
+  <rect x="800" y="194" width="128" height="32" rx="10" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.5"/>
+  <text class="m" x="864" y="215" font-size="13" text-anchor="middle" fill="#0f172a">'Correo lento'</text>
+
+  <!-- Row 3: map update -->
+  <rect x="32" y="246" width="420" height="60" rx="10" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.5"/>
+  <text class="m" x="46" y="271" font-size="14" fill="#0f172a">tickets.map((t) =&gt;</text>
+  <text class="m" x="62" y="293" font-size="14" fill="#0f172a">t.id === 3 ? { ...t, status: 'closed' } : t)</text>
+  <line x1="462" y1="276" x2="514" y2="276" stroke="#1e293b" stroke-width="2" marker-end="url(#arrDark)"/>
+  <rect x="524" y="260" width="92" height="32" rx="10" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+  <text class="m" x="570" y="281" font-size="13" text-anchor="middle" fill="#0f172a">#1 closed</text>
+  <rect x="628" y="260" width="92" height="32" rx="10" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+  <text class="m" x="674" y="281" font-size="13" text-anchor="middle" fill="#0f172a">#2 open</text>
+  <rect x="732" y="260" width="92" height="32" rx="10" fill="#dcfce7" stroke="#a16207" stroke-width="3"/>
+  <text class="m" x="778" y="281" font-size="13" text-anchor="middle" fill="#0f172a">#3 closed</text>
+  <text class="s" x="778" y="310" font-size="12" text-anchor="middle" fill="#a16207">copia nueva</text>
+
+  <!-- Row 4: spread -->
+  <rect x="32" y="324" width="420" height="40" rx="10" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.5"/>
+  <text class="m" x="46" y="349" font-size="14" fill="#0f172a">[nuevo, ...tickets]</text>
+  <line x1="462" y1="344" x2="514" y2="344" stroke="#1e293b" stroke-width="2" marker-end="url(#arrDark)"/>
+  <rect x="524" y="328" width="92" height="32" rx="10" fill="#dbeafe" stroke="#a16207" stroke-width="3"/>
+  <text class="m" x="570" y="349" font-size="13" text-anchor="middle" fill="#0f172a">#4 open</text>
+  <rect x="628" y="328" width="92" height="32" rx="10" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+  <text class="m" x="674" y="349" font-size="13" text-anchor="middle" fill="#0f172a">#1 closed</text>
+  <rect x="732" y="328" width="92" height="32" rx="10" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+  <text class="m" x="778" y="349" font-size="13" text-anchor="middle" fill="#0f172a">#2 open</text>
+  <rect x="836" y="328" width="92" height="32" rx="10" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+  <text class="m" x="882" y="349" font-size="13" text-anchor="middle" fill="#0f172a">#3 open</text>
+
+  <!-- Footer -->
+  <rect x="32" y="384" width="896" height="60" rx="10" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+  <text class="s" x="48" y="409" font-size="15" fill="#0f172a">Y <tspan class="m" font-size="14">tickets</tspan> sigue igual: #1 closed, #2 open, #3 open.</text>
+  <text class="s" x="48" y="431" font-size="15" fill="#0f172a">Por eso Angular nota el cambio: recibe una lista nueva.</text>
+</svg>

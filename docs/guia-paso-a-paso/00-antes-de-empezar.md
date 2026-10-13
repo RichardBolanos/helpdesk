@@ -1,5 +1,7 @@
 # Iteración 00 · Antes de empezar
 
+[← Índice](README.md) · [01 · Tu primera API →](01-primera-api.md) <!-- nav -->
+
 **Clase:** martes 13 de octubre · **Entra en:** parcial 1 · **Duración:** 40 min · **Temas del plan:** arquitectura de sistemas web, modelo cliente-servidor, Git, asistentes de código.
 
 ## Lo que vas a construir
@@ -31,20 +33,7 @@ Se comunican con un protocolo llamado **HTTP**: el cliente envía una *petición
 
 Nuestro sistema tiene cuatro piezas:
 
-```
- Navegador                     Servidor (en tu computador, con Docker)
-┌──────────────┐   HTTP/JSON   ┌──────────────┐    SQL    ┌──────────────┐
-│   Angular    │ ────────────▶ │   FastAPI    │ ────────▶ │  PostgreSQL  │
-│ localhost:   │ ◀──────────── │ localhost:   │ ◀──────── │ localhost:   │
-│    4200      │               │    8000      │           │    5433      │
-└──────────────┘               └──────┬───────┘           └──────────────┘
-                                      │ SMTP
-                                      ▼
-                               ┌──────────────┐
-                               │   Mailpit    │  (correos de prueba, opcional)
-                               │    8025      │
-                               └──────────────┘
-```
+![Arquitectura de HelpDesk: el navegador con Angular habla por HTTP con FastAPI, que usa PostgreSQL y Mailpit dentro de Docker](img/00-arquitectura.svg)
 
 - **Angular** (frontend): lo que el usuario ve y toca.
 - **FastAPI** (backend): una API escrita en Python. Recibe peticiones, valida, decide quién puede hacer qué y habla con la base de datos.
@@ -160,3 +149,7 @@ Un ticket tiene: título, descripción, prioridad (`low`, `medium`, `high`), est
 git add .
 git commit -m "chore: estructura inicial del proyecto"
 ```
+
+---
+
+[← Índice](README.md) · [01 · Tu primera API →](01-primera-api.md) <!-- nav -->

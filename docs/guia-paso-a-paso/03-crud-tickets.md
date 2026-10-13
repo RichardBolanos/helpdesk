@@ -1,5 +1,7 @@
 # Iteración 03 · CRUD de tickets
 
+[← 02 · Base de datos y modelos](02-base-de-datos.md) · [Índice](README.md) · [04 · Registro, login y JWT →](04-registro-login-jwt.md) <!-- nav -->
+
 **Clase:** martes 20 de octubre · **Entra en:** parcial 1 · **Duración:** 45 min · **Temas del plan:** APIs REST, validación de datos.
 
 ## Lo que vas a construir
@@ -40,6 +42,8 @@ Un **esquema** (con Pydantic) define la forma exacta de los datos que entran o s
 Separarlos evita dos problemas: que el cliente se invente datos que no le corresponden (por ejemplo, crear un ticket ya cerrado o a nombre de otro) y que el servidor devuelva datos internos (como el hash de una contraseña).
 
 Si los datos no cumplen el esquema, FastAPI responde **422** automáticamente, con el detalle de qué campo falló. No escribes ni un `if` para eso.
+
+![El cliente envía datos, TicketIn valida (o responde 422), se guarda el Ticket y TicketOut filtra lo que se responde](img/03-esquemas.svg)
 
 ### Inyección de dependencias
 
@@ -210,3 +214,7 @@ Abre http://localhost:8000/docs. Debe aparecer la sección **tickets** con cuatr
 git add .
 git commit -m "feat(api): CRUD de tickets"
 ```
+
+---
+
+[← 02 · Base de datos y modelos](02-base-de-datos.md) · [Índice](README.md) · [04 · Registro, login y JWT →](04-registro-login-jwt.md) <!-- nav -->

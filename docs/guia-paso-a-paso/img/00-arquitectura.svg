@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="490" viewBox="0 0 960 490" role="img">
+  <title>Arquitectura de HelpDesk: el navegador con Angular habla por HTTP con la API FastAPI, que usa PostgreSQL y Mailpit dentro de Docker</title>
+  <style>
+    text { font-family: "Segoe UI", Helvetica, Arial, sans-serif; font-size: 15px; fill: #0f172a; }
+    .t { font-size: 24px; font-weight: 700; }
+    .b { font-weight: 700; }
+    .n { font-size: 13px; fill: #475569; }
+    .c { font-family: Consolas, Menlo, monospace; font-size: 14px; }
+    .m { text-anchor: middle; }
+    .lbl { font-size: 14px; font-weight: 700; }
+  </style>
+  <defs>
+    <marker id="aBlue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#2563eb"/></marker>
+    <marker id="aGreen" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#16a34a"/></marker>
+    <marker id="aDark" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#1e293b"/></marker>
+  </defs>
+  <rect x="0.5" y="0.5" width="959" height="489" rx="12" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+  <text x="32" y="46" class="t">Las piezas de HelpDesk</text>
+
+  <!-- Cliente -->
+  <rect x="32" y="76" width="200" height="144" rx="10" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5"/>
+  <text x="48" y="100" class="lbl" style="fill:#475569">Cliente</text>
+  <rect x="48" y="112" width="168" height="92" rx="10" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="132" y="142" class="b m">Navegador</text>
+  <text x="132" y="166" class="m">Angular</text>
+  <text x="132" y="190" class="c m">localhost:4200</text>
+
+  <!-- Docker -->
+  <rect x="440" y="76" width="488" height="296" rx="10" fill="#ffffff" stroke="#475569" stroke-width="1.5" stroke-dasharray="7 5"/>
+  <text x="456" y="100" class="lbl" style="fill:#475569">Docker (en tu computador)</text>
+
+  <rect x="460" y="114" width="448" height="80" rx="10" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+  <text x="684" y="146" class="b m">FastAPI · API (backend)</text>
+  <text x="684" y="172" class="c m">localhost:8000</text>
+
+  <rect x="460" y="250" width="212" height="106" rx="10" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.5"/>
+  <text x="566" y="276" class="b m">PostgreSQL</text>
+  <text x="566" y="298" class="m">base de datos</text>
+  <text x="566" y="322" class="c m">localhost:5433</text>
+
+  <rect x="696" y="250" width="212" height="106" rx="10" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.5"/>
+  <text x="802" y="276" class="b m">Mailpit</text>
+  <text x="802" y="298" class="m">correos de prueba</text>
+  <text x="802" y="322" class="c m">localhost:8025</text>
+  <text x="802" y="342" class="n m">(opcional)</text>
+
+  <!-- Arrows -->
+  <line x1="216" y1="140" x2="458" y2="140" stroke="#2563eb" stroke-width="2" marker-end="url(#aBlue)"/>
+  <text x="338" y="130" class="lbl m" style="fill:#2563eb">petición HTTP + JSON</text>
+  <line x1="460" y1="172" x2="218" y2="172" stroke="#16a34a" stroke-width="2" marker-end="url(#aGreen)"/>
+  <text x="338" y="192" class="lbl m" style="fill:#16a34a">respuesta JSON</text>
+
+  <line x1="566" y1="194" x2="566" y2="248" stroke="#1e293b" stroke-width="2" marker-end="url(#aDark)"/>
+  <text x="578" y="227" class="lbl">SQL</text>
+  <line x1="802" y1="194" x2="802" y2="248" stroke="#1e293b" stroke-width="2" marker-end="url(#aDark)"/>
+  <text x="814" y="227" class="lbl">SMTP</text>
+
+  <!-- Banner -->
+  <rect x="32" y="396" width="896" height="70" rx="10" fill="#fee2e2" stroke="#dc2626" stroke-width="1.5"/>
+  <text x="480" y="425" class="b m">El frontend no es confiable: cualquiera puede cambiarlo desde el navegador.</text>
+  <text x="480" y="450" class="m">Por eso las reglas de seguridad viven en el backend.</text>
+</svg>

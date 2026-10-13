@@ -1,5 +1,7 @@
 # Iteración 13 · Panel de administración
 
+[← 12 · Tickets conectados](12-tickets-conectados.md) · [Índice](README.md) · [14 · Cierre: pruebas, despliegue y auditoría con IA →](14-cierre.md) <!-- nav -->
+
 **Clase:** martes 24 de noviembre · **Entra en:** parcial 2 · **Duración:** 35 min · **Temas del plan:** auditoría de seguridad, interfaces interactivas.
 
 ## Lo que vas a construir
@@ -26,6 +28,8 @@ Ninguna capa de seguridad es perfecta, así que se ponen varias:
 | `if user_id == admin.id` en la API | Rechaza con 400 | **No** |
 
 Las tres primeras capas mejoran la experiencia. Las dos últimas son la seguridad.
+
+![Cinco capas: tres en el frontend que se pueden saltar desde el navegador y dos en el backend que detienen el ataque](img/13-defensa-profundidad.svg)
 
 ### Más enlaces de propiedades y eventos
 
@@ -186,3 +190,7 @@ Compara las respuestas con la tabla de defensa en profundidad.
 git add .
 git commit -m "feat(web): panel de administración de usuarios"
 ```
+
+---
+
+[← 12 · Tickets conectados](12-tickets-conectados.md) · [Índice](README.md) · [14 · Cierre: pruebas, despliegue y auditoría con IA →](14-cierre.md) <!-- nav -->

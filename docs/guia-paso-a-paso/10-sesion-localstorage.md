@@ -1,5 +1,7 @@
 # Iteración 10 · Mantener la sesión
 
+[← 09 · Login contra la API](09-http-login-cors.md) · [Índice](README.md) · [11 · Interceptor y guards →](11-interceptor-guards.md) <!-- nav -->
+
 **Clase:** martes 17 de noviembre · **Entra en:** parcial 2 · **Duración:** 45 min · **Temas del plan:** persistencia de datos del lado del cliente (LocalStorage, IndexedDB), gestión del estado.
 
 > **JavaScript que vas a ver aquí:** [objetos y JSON](06b-javascript-minimo.md#3-objetos-arreglos-y-json), [métodos de arreglos](06b-javascript-minimo.md#6-métodos-de-arreglos), [spread y rest](06b-javascript-minimo.md#7-spread-rest-y-atajos-de-objetos), [operadores cortos](06b-javascript-minimo.md#8-verdadero-falso-y-operadores-cortos). Si algo no lo reconoces, repásalo en la tarea [JavaScript mínimo](06b-javascript-minimo.md) antes de seguir.
@@ -20,10 +22,7 @@ Después del login, la aplicación recuerda quién eres aunque recargues la pág
 
 Un servicio con `providedIn: 'root'` es **una sola instancia** para toda la aplicación. Si guardamos el usuario en una señal **dentro del servicio**, todos los componentes que lo inyecten leen la misma señal. Cuando el login hace `user.set(...)`, el encabezado se redibuja solo, sin que los dos componentes se conozcan.
 
-```
- Login ──set()──▶ AuthService.user (signal) ◀──lee── App (encabezado)
-                                             ◀──lee── Tickets
-```
+![AuthService guarda token y user en señales que Login escribe y App y Tickets leen; se respaldan en el LocalStorage](img/10-estado-compartido.svg)
 
 ### `computed`: valores derivados
 
@@ -281,3 +280,7 @@ Reemplaza el `<header>` de `src/app/app.html`:
 git add .
 git commit -m "feat(web): sesión persistente con LocalStorage y registro"
 ```
+
+---
+
+[← 09 · Login contra la API](09-http-login-cors.md) · [Índice](README.md) · [11 · Interceptor y guards →](11-interceptor-guards.md) <!-- nav -->

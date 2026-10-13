@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="500" viewBox="0 0 960 500" role="img">
+  <title>El contrato de entrada y salida: TicketIn valida lo que envía el cliente, Ticket se guarda en la base de datos y TicketOut filtra lo que responde la API</title>
+  <style>
+    text { font-family: "Segoe UI", Helvetica, Arial, sans-serif; font-size: 15px; fill: #0f172a; }
+    .t { font-size: 24px; font-weight: 700; }
+    .b { font-weight: 700; }
+    .n { font-size: 13px; fill: #475569; }
+    .c { font-family: Consolas, Menlo, monospace; font-size: 14px; }
+    .m { text-anchor: middle; }
+    .lbl { font-size: 13px; font-weight: 700; }
+  </style>
+  <defs>
+    <marker id="aDark" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#1e293b"/></marker>
+    <marker id="aGreen" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#16a34a"/></marker>
+    <marker id="aYellow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#a16207"/></marker>
+  </defs>
+  <rect x="0.5" y="0.5" width="959" height="499" rx="12" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+  <text x="32" y="46" class="t">El contrato de entrada y salida</text>
+
+  <!-- 1. Client payload -->
+  <rect x="32" y="76" width="340" height="164" rx="10" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.5"/>
+  <text x="48" y="102" class="b">1. Lo que envía el cliente</text>
+  <text x="48" y="134" class="c">{"title": "...",</text>
+  <text x="56" y="156" class="c">"description": "...",</text>
+  <text x="56" y="178" class="c">"priority": "high",</text>
+  <text x="56" y="200" class="c" style="fill:#64748b">"status": "closed",</text>
+  <text x="56" y="222" class="c" style="fill:#64748b">"author_id": 5}</text>
+  <line x1="52" y1="195" x2="220" y2="195" stroke="#dc2626" stroke-width="1.5"/>
+  <line x1="52" y1="217" x2="186" y2="217" stroke="#dc2626" stroke-width="1.5"/>
+  <path d="M232,186 h6 v40 h-6" fill="none" stroke="#dc2626" stroke-width="1.5"/>
+  <text x="248" y="211" class="lbl" style="fill:#dc2626">se ignoran</text>
+
+  <!-- 2. TicketIn -->
+  <line x1="372" y1="158" x2="438" y2="158" stroke="#1e293b" stroke-width="2" marker-end="url(#aDark)"/>
+  <rect x="440" y="120" width="220" height="76" rx="10" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="550" y="164" class="b m">2. TicketIn · valida</text>
+
+  <!-- Error branch -->
+  <line x1="660" y1="158" x2="718" y2="158" stroke="#a16207" stroke-width="2" stroke-dasharray="6 4" marker-end="url(#aYellow)"/>
+  <rect x="720" y="134" width="208" height="48" rx="10" fill="#fef9c3" stroke="#a16207" stroke-width="1.5"/>
+  <text x="824" y="163" class="b m" style="fill:#a16207">si no cumple: 422</text>
+
+  <!-- Connector to row 2 -->
+  <path d="M550,196 V258 H157 V294" fill="none" stroke="#16a34a" stroke-width="2" marker-end="url(#aGreen)"/>
+  <text x="562" y="232" class="lbl" style="fill:#16a34a">si cumple</text>
+
+  <!-- 3. Ticket -->
+  <rect x="32" y="296" width="250" height="76" rx="10" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+  <text x="157" y="328" class="b m">3. Ticket</text>
+  <text x="157" y="351" class="m">se guarda en la BD</text>
+  <text x="40" y="392" class="n">el servidor pone:</text>
+  <text x="40" y="409" class="n">id, created_at, status, author_id</text>
+
+  <!-- 4. TicketOut -->
+  <line x1="282" y1="334" x2="318" y2="334" stroke="#1e293b" stroke-width="2" marker-end="url(#aDark)"/>
+  <rect x="320" y="296" width="200" height="76" rx="10" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="420" y="328" class="b m">4. TicketOut</text>
+  <text x="420" y="351" class="m">filtra</text>
+
+  <!-- Response payload -->
+  <line x1="520" y1="334" x2="558" y2="334" stroke="#1e293b" stroke-width="2" marker-end="url(#aDark)"/>
+  <rect x="560" y="276" width="368" height="118" rx="10" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.5"/>
+  <text x="576" y="302" class="b">Lo que responde</text>
+  <text x="576" y="332" class="c">{"id": 7, "title": "...",</text>
+  <text x="584" y="354" class="c">"status": "open",</text>
+  <text x="584" y="376" class="c">"author": {"id": 2, "name": "Ana"}}</text>
+
+  <!-- Bottom note -->
+  <rect x="32" y="432" width="896" height="44" rx="10" fill="#fee2e2" stroke="#dc2626" stroke-width="1.5"/>
+  <text x="480" y="459" class="b m">Nunca sale de la API: password_hash ni datos internos.</text>
+</svg>

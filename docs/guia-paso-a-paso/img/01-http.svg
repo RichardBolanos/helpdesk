@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="578" viewBox="0 0 960 578" role="img">
+  <title>Una petición HTTP del cliente y la respuesta del servidor, con sus partes y los grupos de códigos de estado</title>
+  <style>
+    text { font-family: "Segoe UI", Helvetica, Arial, sans-serif; font-size: 15px; fill: #0f172a; }
+    .t { font-size: 24px; font-weight: 700; }
+    .b { font-weight: 700; }
+    .n { font-size: 13px; fill: #475569; }
+    .c { font-family: Consolas, Menlo, monospace; font-size: 14px; }
+    .m { text-anchor: middle; }
+    .lbl { font-size: 14px; font-weight: 700; }
+    .br { fill: none; stroke: #94a3b8; stroke-width: 1.5; }
+  </style>
+  <defs>
+    <marker id="aBlue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#2563eb"/></marker>
+    <marker id="aGreen" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#16a34a"/></marker>
+  </defs>
+  <rect x="0.5" y="0.5" width="959" height="577" rx="12" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+  <text x="32" y="46" class="t">Una petición y su respuesta</text>
+
+  <!-- Actors -->
+  <rect x="32" y="70" width="150" height="396" rx="10" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.5"/>
+  <text x="107" y="262" class="b m">Cliente</text>
+  <text x="107" y="284" class="m">(navegador)</text>
+  <rect x="778" y="70" width="150" height="396" rx="10" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.5"/>
+  <text x="853" y="262" class="b m">Servidor</text>
+  <text x="853" y="284" class="m">(API)</text>
+
+  <!-- Arrow 1 -->
+  <text x="480" y="88" class="lbl m" style="fill:#2563eb">1. el cliente pide</text>
+  <line x1="182" y1="98" x2="776" y2="98" stroke="#2563eb" stroke-width="2" marker-end="url(#aBlue)"/>
+
+  <!-- Request card -->
+  <rect x="214" y="110" width="532" height="34" rx="10" fill="#dbeafe"/>
+  <rect x="214" y="130" width="532" height="14" fill="#dbeafe"/>
+  <rect x="214" y="110" width="532" height="168" rx="10" fill="none" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="230" y="132" class="b">Petición</text>
+  <text x="232" y="168" class="c">POST /api/tickets HTTP/1.1</text>
+  <text x="232" y="190" class="c">Content-Type: application/json</text>
+  <text x="232" y="212" class="c">Authorization: Bearer eyJhbG...</text>
+  <text x="232" y="256" class="c">{"title": "No prende el PC"}</text>
+  <path class="br" d="M556,155 h6 v18 h-6"/>
+  <text x="572" y="168" class="n">método + ruta</text>
+  <path class="br" d="M556,177 h6 v40 h-6"/>
+  <text x="572" y="201" class="n">cabeceras</text>
+  <path class="br" d="M556,243 h6 v18 h-6"/>
+  <text x="572" y="256" class="n">cuerpo</text>
+
+  <!-- Arrow 2 -->
+  <text x="480" y="302" class="lbl m" style="fill:#16a34a">2. el servidor responde</text>
+  <line x1="778" y1="312" x2="184" y2="312" stroke="#16a34a" stroke-width="2" marker-end="url(#aGreen)"/>
+
+  <!-- Response card -->
+  <rect x="214" y="324" width="532" height="34" rx="10" fill="#dcfce7"/>
+  <rect x="214" y="344" width="532" height="14" fill="#dcfce7"/>
+  <rect x="214" y="324" width="532" height="142" rx="10" fill="none" stroke="#16a34a" stroke-width="1.5"/>
+  <text x="230" y="346" class="b">Respuesta</text>
+  <text x="232" y="382" class="c">HTTP/1.1 201 Created</text>
+  <text x="232" y="404" class="c">Content-Type: application/json</text>
+  <text x="232" y="448" class="c">{"id": 7, "title": "No prende el PC"}</text>
+  <path class="br" d="M556,369 h6 v18 h-6"/>
+  <text x="572" y="382" class="n">código de estado</text>
+  <path class="br" d="M556,391 h6 v18 h-6"/>
+  <text x="572" y="404" class="n">cabeceras</text>
+  <path class="br" d="M556,435 h6 v18 h-6"/>
+  <text x="572" y="448" class="n">cuerpo</text>
+
+  <!-- Status chips -->
+  <rect x="32" y="490" width="288" height="64" rx="10" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+  <text x="176" y="516" class="b m" style="fill:#166534">2xx · salió bien</text>
+  <text x="176" y="539" class="n m">200, 201, 204</text>
+  <rect x="336" y="490" width="288" height="64" rx="10" fill="#fef9c3" stroke="#a16207" stroke-width="1.5"/>
+  <text x="480" y="516" class="b m" style="fill:#a16207">4xx · el cliente se equivocó</text>
+  <text x="480" y="539" class="n m">400, 401, 403, 404, 409, 422</text>
+  <rect x="640" y="490" width="288" height="64" rx="10" fill="#fee2e2" stroke="#dc2626" stroke-width="1.5"/>
+  <text x="784" y="516" class="b m" style="fill:#dc2626">5xx · el servidor falló</text>
+  <text x="784" y="539" class="n m">500</text>
+</svg>

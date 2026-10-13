@@ -1,5 +1,7 @@
 # Tarea · JavaScript mínimo para Angular
 
+[← 06 · Esqueleto en Angular](06-angular-esqueleto.md) · [Índice](README.md) · [07 · TypeScript y señales →](07-typescript-senales.md) <!-- nav -->
+
 **Clase:** tarea, antes del martes 10 de noviembre · **Entra en:** parcial 2 · **Duración:** 60 min · **Temas del plan:** programación funcional en JavaScript (ES6+), contextos de ejecución, modularidad.
 
 ## Para qué es esto
@@ -111,6 +113,8 @@ nums                             // [1, 2, 3, 4]       el original no cambió
 ```
 
 **En el proyecto:** `filter` para quitar un ticket borrado y `map` para reemplazar uno modificado (iteraciones 07 y 12); `includes` para saber si el usuario tiene un rol (iteración 10).
+
+![filter, map y spread aplicados a una lista de tickets: cada uno devuelve una lista nueva y la original no cambia](img/06b-arreglos.svg)
 
 ## 7. Spread, rest y atajos de objetos
 
@@ -245,3 +249,7 @@ Los puntos 3, 4 y 5 son exactamente lo que hacen `remove`, `setStatus` y `create
 
 - En el punto 4, ¿por qué `{ ...t, status: 'closed' }` y no `t.status = 'closed'`? Revisa qué le pasa a `tickets` con cada opción.
 - ¿Cuál es la diferencia entre `||` y `??`? Inventa un caso en el que den resultados distintos y que importe.
+
+---
+
+[← 06 · Esqueleto en Angular](06-angular-esqueleto.md) · [Índice](README.md) · [07 · TypeScript y señales →](07-typescript-senales.md) <!-- nav -->

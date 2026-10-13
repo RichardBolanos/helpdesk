@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="620" viewBox="0 0 960 620" role="img">
+  <title>JWT: un carné firmado. Las tres partes del token (header, payload y firma) y cómo lo usan el cliente y la API</title>
+  <style>
+    .s { font-family: Segoe UI, Helvetica, Arial, sans-serif; }
+    .m { font-family: Consolas, Menlo, monospace; }
+  </style>
+  <defs>
+    <marker id="arrBlue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#2563eb"/></marker>
+    <marker id="arrGreen" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#16a34a"/></marker>
+  </defs>
+  <rect x="0.5" y="0.5" width="959" height="619" rx="12" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+  <text class="s" x="32" y="46" font-size="24" font-weight="bold" fill="#0f172a">JWT: un carné firmado</text>
+
+  <!-- Token segments -->
+  <rect x="32" y="66" width="220" height="40" rx="10" fill="#fee2e2" stroke="#dc2626" stroke-width="1.5"/>
+  <text class="m" x="142" y="91" font-size="14" text-anchor="middle" fill="#0f172a">eyJhbGciOiJIUzI1NiJ9</text>
+  <circle cx="264" cy="86" r="5" fill="#0f172a"/>
+  <rect x="276" y="66" width="350" height="40" rx="10" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+  <text class="m" x="451" y="91" font-size="14" text-anchor="middle" fill="#0f172a">eyJzdWIiOiIyIiwiZXhwIjoxNzYwMDAwMDAwfQ</text>
+  <circle cx="638" cy="86" r="5" fill="#0f172a"/>
+  <rect x="650" y="66" width="278" height="40" rx="10" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+  <text class="m" x="789" y="91" font-size="14" text-anchor="middle" fill="#0f172a">k3J9x...</text>
+
+  <!-- Connectors -->
+  <line x1="142" y1="106" x2="142" y2="122" stroke="#dc2626" stroke-width="2"/>
+  <line x1="451" y1="106" x2="451" y2="122" stroke="#2563eb" stroke-width="2"/>
+  <line x1="789" y1="106" x2="789" y2="122" stroke="#16a34a" stroke-width="2"/>
+
+  <!-- Decoded boxes -->
+  <rect x="32" y="122" width="220" height="112" rx="10" fill="#fee2e2" stroke="#dc2626" stroke-width="1.5"/>
+  <text class="s" x="48" y="148" font-size="15" font-weight="bold" fill="#dc2626">header</text>
+  <text class="m" x="48" y="182" font-size="14" fill="#0f172a">{"alg": "HS256"}</text>
+
+  <rect x="276" y="122" width="350" height="112" rx="10" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+  <text class="s" x="292" y="148" font-size="15" font-weight="bold" fill="#2563eb">payload</text>
+  <text class="m" x="292" y="174" font-size="14" fill="#0f172a">{"sub": "2",</text>
+  <text class="m" x="301" y="194" font-size="14" fill="#0f172a">"exp": 1760000000}</text>
+  <text class="s" x="292" y="221" font-size="13" fill="#475569">id del usuario y vencimiento</text>
+
+  <rect x="650" y="122" width="278" height="112" rx="10" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+  <text class="s" x="666" y="148" font-size="15" font-weight="bold" fill="#16a34a">firma</text>
+  <text class="s" x="666" y="178" font-size="14" fill="#0f172a">se calcula con header + payload</text>
+  <text class="s" x="666" y="200" font-size="14" fill="#0f172a">+ la SECRET_KEY del servidor</text>
+
+  <!-- Notes -->
+  <rect x="32" y="250" width="440" height="60" rx="10" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+  <text class="s" x="252" y="285" font-size="15" text-anchor="middle" fill="#0f172a">Cualquiera puede leerlo: no está cifrado.</text>
+  <rect x="488" y="250" width="440" height="60" rx="10" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+  <text class="s" x="708" y="275" font-size="15" text-anchor="middle" fill="#0f172a">Nadie puede cambiarlo sin la SECRET_KEY:</text>
+  <text class="s" x="708" y="295" font-size="15" text-anchor="middle" fill="#0f172a">la firma ya no coincidiría.</text>
+
+  <!-- Actors -->
+  <rect x="32" y="330" width="140" height="36" rx="10" fill="#1e293b" stroke="#1e293b" stroke-width="1.5"/>
+  <text class="s" x="102" y="353" font-size="15" font-weight="bold" text-anchor="middle" fill="#ffffff">Cliente</text>
+  <rect x="788" y="330" width="140" height="36" rx="10" fill="#1e293b" stroke="#1e293b" stroke-width="1.5"/>
+  <text class="s" x="858" y="353" font-size="15" font-weight="bold" text-anchor="middle" fill="#ffffff">API</text>
+  <line x1="102" y1="366" x2="102" y2="600" stroke="#cbd5e1" stroke-width="1.5" stroke-dasharray="5 4"/>
+  <line x1="858" y1="366" x2="858" y2="600" stroke="#cbd5e1" stroke-width="1.5" stroke-dasharray="5 4"/>
+
+  <!-- Step 1 -->
+  <circle cx="132" cy="396" r="11" fill="#2563eb"/>
+  <text class="s" x="132" y="401" font-size="13" font-weight="bold" text-anchor="middle" fill="#ffffff">1</text>
+  <text x="480" y="401" font-size="14" text-anchor="middle" fill="#0f172a"><tspan class="m">POST /api/auth/login</tspan><tspan class="s" fill="#475569"> (email y contraseña)</tspan></text>
+  <line x1="104" y1="414" x2="855" y2="414" stroke="#2563eb" stroke-width="2" marker-end="url(#arrBlue)"/>
+
+  <!-- Step 2 -->
+  <circle cx="132" cy="450" r="11" fill="#16a34a"/>
+  <text class="s" x="132" y="455" font-size="13" font-weight="bold" text-anchor="middle" fill="#ffffff">2</text>
+  <text class="m" x="480" y="455" font-size="14" text-anchor="middle" fill="#0f172a">{"access_token": "eyJ..."}</text>
+  <line x1="856" y1="468" x2="105" y2="468" stroke="#16a34a" stroke-width="2" marker-end="url(#arrGreen)"/>
+
+  <!-- Step 3 -->
+  <circle cx="132" cy="505" r="11" fill="#2563eb"/>
+  <text class="s" x="132" y="510" font-size="13" font-weight="bold" text-anchor="middle" fill="#ffffff">3</text>
+  <text class="m" x="480" y="500" font-size="14" text-anchor="middle" fill="#0f172a">GET /api/tickets</text>
+  <text class="m" x="480" y="520" font-size="14" text-anchor="middle" fill="#2563eb">Authorization: Bearer eyJ...</text>
+  <line x1="104" y1="534" x2="855" y2="534" stroke="#2563eb" stroke-width="2" marker-end="url(#arrBlue)"/>
+
+  <!-- Step 4 -->
+  <circle cx="132" cy="563" r="11" fill="#16a34a"/>
+  <text class="s" x="132" y="568" font-size="13" font-weight="bold" text-anchor="middle" fill="#ffffff">4</text>
+  <text class="s" x="480" y="568" font-size="15" text-anchor="middle" fill="#0f172a">verifica firma y vencimiento → 200</text>
+  <line x1="856" y1="582" x2="105" y2="582" stroke="#16a34a" stroke-width="2" marker-end="url(#arrGreen)"/>
+</svg>

@@ -1,5 +1,7 @@
 # Iteración 09 · Login contra la API
 
+[← 08 · Navegación con rutas](08-rutas.md) · [Índice](README.md) · [10 · Mantener la sesión →](10-sesion-localstorage.md) <!-- nav -->
+
 **Clase:** martes 10 de noviembre · **Entra en:** parcial 2 · **Duración:** 45 min · **Temas del plan:** asincronismo (Event Loop, Promises, async/await), consumo de APIs REST, contextos de ejecución.
 
 > **JavaScript que vas a ver aquí:** [plantillas de texto](06b-javascript-minimo.md#2-plantillas-de-texto-template-literals), [objetos y JSON](06b-javascript-minimo.md#3-objetos-arreglos-y-json), [funciones como valores](06b-javascript-minimo.md#5-funciones-como-valores), [spread y rest](06b-javascript-minimo.md#7-spread-rest-y-atajos-de-objetos), [operadores cortos](06b-javascript-minimo.md#8-verdadero-falso-y-operadores-cortos). Si algo no lo reconoces, repásalo en la tarea [JavaScript mínimo](06b-javascript-minimo.md) antes de seguir.
@@ -22,16 +24,7 @@ JavaScript corre en un **solo hilo**: ejecuta una instrucción a la vez. Si espe
 
 La solución es el **Event Loop** (bucle de eventos):
 
-```
-  Tu código                Navegador                  Cola de tareas
-┌────────────┐  "pide   ┌──────────────────┐ "ya    ┌───────────────┐
-│ http.post  │ ───────▶ │ hace la petición │ ─────▶ │ callback con  │
-│ (sigue con │  esto"   │  en paralelo     │ llegó" │ la respuesta  │
-│  lo demás) │          └──────────────────┘        └───────┬───────┘
-└────────────┘                                              │
-      ▲         cuando tu código termina, el Event Loop     │
-      └──────── toma la siguiente tarea de la cola ─────────┘
-```
+![Event Loop: tu código pide la petición y sigue, el navegador la hace en paralelo y la respuesta espera en la cola hasta que el hilo está libre](img/09-event-loop.svg)
 
 Tu código **pide** la petición y sigue. El navegador la hace por su cuenta. Cuando llega la respuesta, se pone en una cola, y cuando JavaScript está libre ejecuta la función que dejaste para ese momento (un *callback*).
 
@@ -91,6 +84,8 @@ Esto existe para que una página maliciosa que abras no pueda usar tu sesión de
 **CORS** (*Cross-Origin Resource Sharing*) es la forma en que un servidor dice: "a este origen sí le permito leer mis respuestas". Lo hace con cabeceras como `Access-Control-Allow-Origin`. Antes de un POST con JSON, el navegador incluso envía una petición previa de verificación con el método `OPTIONS` (*preflight*).
 
 Fíjate en algo importante: quien bloquea es el **navegador**, no el servidor. Un `curl` o Postman ignoran CORS por completo. **CORS no es una medida de seguridad del backend**; protege a los usuarios del navegador.
+
+![CORS: el navegador envía un OPTIONS previo, la API autoriza el origen localhost:4200 y luego se hace el POST](img/09-cors.svg)
 
 ## Paso a paso
 
@@ -294,3 +289,7 @@ Desde la raíz `helpdesk/`:
 git add .
 git commit -m "feat: login desde Angular y CORS en la API"
 ```
+
+---
+
+[← 08 · Navegación con rutas](08-rutas.md) · [Índice](README.md) · [10 · Mantener la sesión →](10-sesion-localstorage.md) <!-- nav -->

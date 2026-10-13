@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="550" viewBox="0 0 960 550" role="img">
+  <title>CORS: el navegador hace una pregunta previa (preflight) a la API antes de enviar la petición real desde otro origen</title>
+  <style>
+    .ti{font:bold 24px 'Segoe UI',Helvetica,Arial,sans-serif;fill:#0f172a}
+    .b{font:15px 'Segoe UI',Helvetica,Arial,sans-serif;fill:#0f172a}
+    .bb{font:bold 15px 'Segoe UI',Helvetica,Arial,sans-serif;fill:#0f172a}
+    .n{font:13px 'Segoe UI',Helvetica,Arial,sans-serif;fill:#475569}
+    .nr{font:bold 13px 'Segoe UI',Helvetica,Arial,sans-serif;fill:#dc2626}
+    .c{font:14px Consolas,Menlo,monospace;fill:#0f172a}
+    .cs{font:12px Consolas,Menlo,monospace;fill:#475569}
+    .k{font:bold 13px 'Segoe UI',Helvetica,Arial,sans-serif;fill:#ffffff;text-anchor:middle}
+    .m{text-anchor:middle}
+  </style>
+  <defs>
+    <marker id="ab" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2563eb"/></marker>
+    <marker id="ag" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#16a34a"/></marker>
+  </defs>
+  <rect x="0.5" y="0.5" width="959" height="549" rx="12" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+  <text x="32" y="46" class="ti">CORS: el navegador pregunta antes</text>
+
+  <!-- Orígenes -->
+  <rect x="32" y="68" width="240" height="68" rx="10" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="152" y="94" class="bb m">Frontend</text>
+  <text x="152" y="120" class="c m">http://localhost:4200</text>
+  <rect x="520" y="68" width="240" height="68" rx="10" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+  <text x="640" y="94" class="bb m">API</text>
+  <text x="640" y="120" class="c m">http://localhost:8000</text>
+  <text x="396" y="96" class="nr m">origen distinto:</text>
+  <line x1="282" y1="104" x2="510" y2="104" stroke="#dc2626" stroke-width="1.5" stroke-dasharray="5 4"/>
+  <text x="396" y="124" class="nr m">cambia el puerto</text>
+
+  <!-- Líneas de vida -->
+  <rect x="82" y="164" width="140" height="34" rx="10" fill="#ffffff" stroke="#1e293b" stroke-width="1.5"/>
+  <text x="152" y="186" class="bb m">Navegador</text>
+  <rect x="580" y="164" width="120" height="34" rx="10" fill="#ffffff" stroke="#1e293b" stroke-width="1.5"/>
+  <text x="640" y="186" class="bb m">API</text>
+  <line x1="152" y1="198" x2="152" y2="466" stroke="#cbd5e1" stroke-width="1.5" stroke-dasharray="6 4"/>
+  <line x1="640" y1="198" x2="640" y2="466" stroke="#cbd5e1" stroke-width="1.5" stroke-dasharray="6 4"/>
+
+  <!-- 1 -->
+  <circle cx="126" cy="240" r="11" fill="#2563eb"/><text x="126" y="244.5" class="k">1</text>
+  <text x="396" y="228" class="c m">OPTIONS /api/auth/login</text>
+  <line x1="152" y1="240" x2="636" y2="240" stroke="#2563eb" stroke-width="2" stroke-dasharray="7 4" marker-end="url(#ab)"/>
+  <text x="396" y="260" class="cs m">Origin: http://localhost:4200</text>
+  <text x="396" y="280" class="n m">pregunta previa (preflight)</text>
+
+  <!-- 2 -->
+  <circle cx="126" cy="330" r="11" fill="#16a34a"/><text x="126" y="334.5" class="k">2</text>
+  <text x="396" y="318" class="c m">Access-Control-Allow-Origin: http://localhost:4200</text>
+  <line x1="640" y1="330" x2="156" y2="330" stroke="#16a34a" stroke-width="2" stroke-dasharray="7 4" marker-end="url(#ag)"/>
+  <text x="396" y="350" class="n m">la API autoriza ese origen</text>
+
+  <!-- 3 -->
+  <circle cx="126" cy="402" r="11" fill="#2563eb"/><text x="126" y="406.5" class="k">3</text>
+  <text x="396" y="390" class="c m">POST /api/auth/login</text>
+  <line x1="152" y1="402" x2="636" y2="402" stroke="#2563eb" stroke-width="2" marker-end="url(#ab)"/>
+
+  <!-- 4 -->
+  <circle cx="126" cy="448" r="11" fill="#16a34a"/><text x="126" y="452.5" class="k">4</text>
+  <text x="396" y="436" class="c m">200 + token</text>
+  <line x1="640" y1="448" x2="156" y2="448" stroke="#16a34a" stroke-width="2" marker-end="url(#ag)"/>
+
+  <!-- Caja lateral -->
+  <rect x="688" y="224" width="240" height="140" rx="10" fill="#fee2e2" stroke="#dc2626" stroke-width="1.5"/>
+  <text x="704" y="252" class="bb">Si la API no autoriza</text>
+  <text x="704" y="272" class="bb">el origen:</text>
+  <text x="704" y="302" class="b">el navegador bloquea</text>
+  <text x="704" y="322" class="b">la respuesta</text>
+  <text x="704" y="342" class="b">y Angular ve status 0</text>
+
+  <!-- Nota -->
+  <rect x="32" y="486" width="896" height="40" rx="10" fill="#fef9c3" stroke="#a16207" stroke-width="1.5"/>
+  <text x="48" y="511" class="n">Quien bloquea es el navegador. curl y Postman ignoran CORS: no es seguridad del backend.</text>
+</svg>

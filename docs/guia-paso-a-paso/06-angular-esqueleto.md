@@ -1,5 +1,7 @@
 # Iteración 06 · Esqueleto en Angular
 
+[← 05 · Proteger rutas y roles](05-proteger-rutas-roles.md) · [Índice](README.md) · [Tarea · JavaScript mínimo para Angular →](06b-javascript-minimo.md) <!-- nav -->
+
 **Clase:** martes 27 de octubre · **Entra en:** parcial 1 · **Duración:** 45 min · **Temas del plan:** HTML5 semántico, SEO, cascada, Flexbox, meta-frameworks y estrategias de renderizado.
 
 ## Lo que vas a construir
@@ -38,6 +40,8 @@ Un **componente** es una pieza de interfaz con tres partes:
 | `app.css` | Los estilos, que **solo** afectan a este componente |
 
 El decorador `@Component` une las tres partes y define el `selector`, la etiqueta HTML con la que se usa el componente: `<app-root>`.
+
+![Un componente une app.ts, app.html y app.css en app-root; la barra superior usa Flexbox igual que las clases de Bootstrap](img/06-componente-layout.svg)
 
 ### Angular y React: mismos conceptos, distinta sintaxis
 
@@ -247,3 +251,7 @@ Con esta iteración se cierra lo que entra en el parcial 1. Verifica que:
 - Puedes responder sin mirar las preguntas de *Antes de programar* y *Para pensar* de las iteraciones 00 a 06, sobre todo la tabla de códigos de estado de la 05.
 
 Después del parcial, antes de la clase del 10 de noviembre, haz la tarea [JavaScript mínimo para Angular](06b-javascript-minimo.md). La iteración 07 arranca dando por hecho que la hiciste.
+
+---
+
+[← 05 · Proteger rutas y roles](05-proteger-rutas-roles.md) · [Índice](README.md) · [Tarea · JavaScript mínimo para Angular →](06b-javascript-minimo.md) <!-- nav -->

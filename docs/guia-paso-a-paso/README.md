@@ -4,6 +4,8 @@ Esta guía te lleva a construir, con tus propias manos, el sistema de tickets de
 
 No es una guía para copiar y pegar. Cada iteración te pide pensar antes de escribir código, te explica el concepto justo que necesitas y termina con algo que puedes ver funcionando. Si copias sin entender, el proyecto va a funcionar, pero tú no vas a saber por qué, y eso es lo que se evalúa.
 
+**Empieza aquí:** [00 · Antes de empezar →](00-antes-de-empezar.md) <!-- nav -->
+
 ## Cómo está organizada
 
 Son 15 iteraciones cortas (30 a 45 minutos cada una), una tarea de JavaScript y una iteración opcional. Cada iteración tiene la misma estructura:
@@ -96,3 +98,7 @@ El proyecto usa Angular, no React ni Next.js. Los conceptos son los mismos (comp
 ## Material complementario
 
 La guía en PDF [`../guia-angular-helpdesk.pdf`](../guia-angular-helpdesk.pdf) recorre el proyecto ya terminado y explica cómo viaja un clic desde el navegador hasta la base de datos. Sirve como lectura antes o después de clase.
+
+---
+
+**Empieza aquí:** [00 · Antes de empezar →](00-antes-de-empezar.md) <!-- nav -->

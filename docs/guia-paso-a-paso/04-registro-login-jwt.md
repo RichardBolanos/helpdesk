@@ -1,5 +1,7 @@
 # Iteración 04 · Registro, login y JWT
 
+[← 03 · CRUD de tickets](03-crud-tickets.md) · [Índice](README.md) · [05 · Proteger rutas y roles →](05-proteger-rutas-roles.md) <!-- nav -->
+
 **Clase:** martes 20 de octubre · **Entra en:** parcial 1 · **Duración:** 45 min · **Temas del plan:** seguridad en sistemas web, HTTP.
 
 ## Lo que vas a construir
@@ -22,10 +24,7 @@ Dos endpoints: `POST /api/auth/register` para crear una cuenta y `POST /api/auth
 
 Un **JWT** (JSON Web Token) es un texto con tres partes separadas por puntos:
 
-```
-eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIyIiwiZXhwIjoxNzYwMDAwMDAwfQ.k3J9x...
-└────── header ─────┘ └──────────── payload ────────────────┘ └ firma ┘
-```
+![Un JWT tiene header, payload y firma; cualquiera lo lee pero nadie lo cambia sin la SECRET_KEY; flujo de login y uso del token](img/04-jwt.svg)
 
 - **Header:** el algoritmo de firma (`HS256`).
 - **Payload:** los datos. Aquí solo `sub` (el id del usuario) y `exp` (cuándo vence).
@@ -241,3 +240,7 @@ Verás `sub` y `exp`. Cualquiera puede leerlo sin la clave secreta: por eso no s
 git add .
 git commit -m "feat(api): registro y login con JWT"
 ```
+
+---
+
+[← 03 · CRUD de tickets](03-crud-tickets.md) · [Índice](README.md) · [05 · Proteger rutas y roles →](05-proteger-rutas-roles.md) <!-- nav -->

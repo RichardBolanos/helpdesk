@@ -1,5 +1,7 @@
 # Extra · Correos automáticos
 
+[← 14 · Cierre: pruebas, despliegue y auditoría con IA](14-cierre.md) · [Volver al índice →](README.md) <!-- nav -->
+
 **Clase:** ninguna (opcional) · **Entra en:** no se evalúa · **Duración:** 40 min · **Temas del plan:** integración de servicios, rendimiento.
 
 Esta iteración es opcional. Hazla si tienes tiempo después de la 13; no está en el cronograma de clases.
@@ -23,10 +25,7 @@ Es el protocolo para **enviar** correos. Tu aplicación se conecta a un servidor
 
 FastAPI tiene `BackgroundTasks`: tareas que se ejecutan **después** de enviar la respuesta. El usuario recibe su ticket creado de inmediato y el correo sale después. Si el correo falla, se registra en el log, pero la operación del usuario ya quedó hecha.
 
-```
-Sin tareas en segundo plano:  [guardar ticket] [enviar correo 2s] → respuesta   (el usuario espera 2s)
-Con tareas en segundo plano:  [guardar ticket] → respuesta → [enviar correo]    (el usuario no espera)
-```
+![Sin tareas en segundo plano el usuario espera el correo; con BackgroundTasks recibe la respuesta de inmediato y el correo sale después](img/extra-segundo-plano.svg)
 
 ### Inyección en correos
 
@@ -143,3 +142,7 @@ Abre http://localhost:8025 y, en otra pestaña, la aplicación:
 git add .
 git commit -m "feat(api): correos automáticos con Mailpit"
 ```
+
+---
+
+[← 14 · Cierre: pruebas, despliegue y auditoría con IA](14-cierre.md) · [Volver al índice →](README.md) <!-- nav -->

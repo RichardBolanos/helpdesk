@@ -1,5 +1,7 @@
 # Iteración 05 · Proteger rutas y roles
 
+[← 04 · Registro, login y JWT](04-registro-login-jwt.md) · [Índice](README.md) · [06 · Esqueleto en Angular →](06-angular-esqueleto.md) <!-- nav -->
+
 **Clase:** martes 27 de octubre · **Entra en:** parcial 1 · **Duración:** 45 min · **Temas del plan:** seguridad, auditoría de código.
 
 ## Lo que vas a construir
@@ -28,6 +30,8 @@ Al final de la iteración la vas a verificar celda por celda.
 - **Autorización:** ¿puedes hacer esto? Se resuelve con el rol. Si falla: **403 Forbidden**.
 
 El nombre "Unauthorized" del 401 confunde, pero en la práctica significa "no sé quién eres". El 403 significa "sé quién eres y no puedes".
+
+![Diagrama de decisión: sin cabecera, token inválido o usuario inactivo da 401; rol no permitido da 403; si todo pasa se ejecuta el endpoint](img/05-autenticacion-autorizacion.svg)
 
 ### Cómo viaja el token
 
@@ -272,3 +276,7 @@ Además:
 git add .
 git commit -m "feat(api): autorización por roles y gestión de usuarios"
 ```
+
+---
+
+[← 04 · Registro, login y JWT](04-registro-login-jwt.md) · [Índice](README.md) · [06 · Esqueleto en Angular →](06-angular-esqueleto.md) <!-- nav -->

@@ -1,5 +1,7 @@
 # Iteración 08 · Navegación con rutas
 
+[← 07 · TypeScript y señales](07-typescript-senales.md) · [Índice](README.md) · [09 · Login contra la API →](09-http-login-cors.md) <!-- nav -->
+
 **Clase:** martes 10 de noviembre · **Entra en:** parcial 2 · **Duración:** 35 min · **Temas del plan:** SPA, rendimiento y velocidad de carga.
 
 > **JavaScript que vas a ver aquí:** [funciones flecha](06b-javascript-minimo.md#4-funciones-flecha), [módulos](06b-javascript-minimo.md#10-módulos-import-y-export). Si algo no lo reconoces, repásalo en la tarea [JavaScript mínimo](06b-javascript-minimo.md) antes de seguir.
@@ -32,6 +34,8 @@ Las rutas se revisan **en orden** y gana la primera que coincide. Por eso el com
 Con `loadComponent: () => import('./pages/login/login')`, el código del login se empaqueta en un archivo aparte (un *chunk*) que solo se descarga la primera vez que alguien entra a `/login`. La carga inicial es más liviana y la aplicación abre más rápido, sobre todo en celulares con mala señal.
 
 `import()` devuelve una **promesa**: un valor que llegará más adelante. Lo verás en detalle en la iteración 09.
+
+![La URL se compara en orden con las rutas, el componente se pinta en router-outlet y su archivo JavaScript se descarga solo cuando se necesita](img/08-router-lazy.svg)
 
 ## Paso a paso
 
@@ -184,3 +188,7 @@ En `src/app/app.html`, quita `<app-tickets />` (ahora lo pinta el router) y camb
 git add .
 git commit -m "feat(web): rutas con carga diferida y pantallas de login y registro"
 ```
+
+---
+
+[← 07 · TypeScript y señales](07-typescript-senales.md) · [Índice](README.md) · [09 · Login contra la API →](09-http-login-cors.md) <!-- nav -->

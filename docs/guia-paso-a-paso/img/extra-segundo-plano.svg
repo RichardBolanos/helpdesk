@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="428" viewBox="0 0 960 428" role="img">
+  <title>Responder primero, enviar después: sin tareas en segundo plano el usuario espera el correo; con BackgroundTasks recibe la respuesta de inmediato y el correo se envía a Mailpit</title>
+  <style>
+    text { font-family: Segoe UI, Helvetica, Arial, sans-serif; font-size: 15px; fill: #0f172a; }
+    .ttl { font-size: 24px; font-weight: 700; }
+    .h { font-size: 16px; font-weight: 700; fill: #1e293b; }
+    .bd { font-weight: 700; }
+    .n { font-size: 13px; fill: #475569; }
+    .c { font-family: Consolas, Menlo, monospace; font-size: 14px; }
+    .m { text-anchor: middle; }
+    .e { text-anchor: end; }
+    .blue { fill: #dbeafe; stroke: #2563eb; stroke-width: 1.5; }
+    .yel { fill: #fef9c3; stroke: #a16207; stroke-width: 1.5; }
+    .grn { fill: #dcfce7; stroke: #16a34a; stroke-width: 1.5; }
+  </style>
+  <defs>
+    <marker id="aGray" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#475569"/></marker>
+    <marker id="aYellow" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="10" markerHeight="10" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#a16207"/></marker>
+  </defs>
+
+  <rect x="0.5" y="0.5" width="959" height="427" rx="12" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+  <text x="32" y="46" class="ttl">Responder primero, enviar después</text>
+
+  <!-- Fila 1 -->
+  <text x="32" y="88" class="h">Sin tareas en segundo plano</text>
+  <rect x="60" y="102" width="150" height="40" rx="6" class="blue"/>
+  <text x="135" y="127" class="m">guardar ticket</text>
+  <rect x="210" y="102" width="300" height="40" rx="6" class="yel"/>
+  <text x="360" y="127" class="m">enviar correo · 2 s</text>
+  <rect x="510" y="102" width="120" height="40" rx="6" class="grn"/>
+  <text x="570" y="127" class="m">respuesta</text>
+  <line x1="60" y1="154" x2="700" y2="154" stroke="#475569" stroke-width="2" marker-end="url(#aGray)"/>
+  <text x="700" y="172" class="n e">tiempo</text>
+  <path d="M60,164 V172 H510 V164" fill="none" stroke="#dc2626" stroke-width="2"/>
+  <text x="60" y="192" class="bd" style="font-size:14px;fill:#dc2626">el usuario espera unos 2 s</text>
+
+  <!-- Fila 2 -->
+  <text x="32" y="232" class="h">Con <tspan class="c" style="font-size:16px">BackgroundTasks</tspan></text>
+  <rect x="60" y="246" width="150" height="40" rx="6" class="blue"/>
+  <text x="135" y="271" class="m">guardar ticket</text>
+  <rect x="210" y="246" width="120" height="40" rx="6" class="grn"/>
+  <text x="270" y="271" class="m">respuesta</text>
+  <rect x="330" y="246" width="300" height="40" rx="6" class="yel"/>
+  <text x="480" y="271" class="m">enviar correo · 2 s</text>
+  <line x1="60" y1="298" x2="700" y2="298" stroke="#475569" stroke-width="2" marker-end="url(#aGray)"/>
+  <text x="700" y="316" class="n e">tiempo</text>
+  <path d="M60,308 V316 H210 V308" fill="none" stroke="#16a34a" stroke-width="2"/>
+  <text x="60" y="336" class="bd" style="font-size:14px;fill:#16a34a">el usuario recibe su ticket de inmediato</text>
+
+  <!-- Mailpit -->
+  <line x1="632" y1="266" x2="714" y2="266" stroke="#a16207" stroke-width="2" marker-end="url(#aYellow)"/>
+  <rect x="716" y="234" width="212" height="64" rx="10" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.5"/>
+  <text x="822" y="260" class="m bd">Mailpit</text>
+  <text x="822" y="282" class="m c">localhost:8025</text>
+
+  <!-- Nota -->
+  <rect x="32" y="364" width="896" height="40" rx="10" fill="#fef9c3" stroke="#a16207" stroke-width="1.5"/>
+  <text x="48" y="389">Si el correo falla, se registra en el log. <tspan class="bd">El ticket ya quedó creado.</tspan></text>
+</svg>

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="520" viewBox="0 0 960 520" role="img">
+  <title>El router y la carga diferida: la URL se compara con las rutas en orden y solo se descarga el JavaScript del componente que coincide</title>
+  <style>
+    .ti{font:bold 24px 'Segoe UI',Helvetica,Arial,sans-serif;fill:#0f172a}
+    .b{font:15px 'Segoe UI',Helvetica,Arial,sans-serif;fill:#0f172a}
+    .bb{font:bold 15px 'Segoe UI',Helvetica,Arial,sans-serif;fill:#0f172a}
+    .hd{font:bold 14px 'Segoe UI',Helvetica,Arial,sans-serif;fill:#ffffff}
+    .n{font:13px 'Segoe UI',Helvetica,Arial,sans-serif;fill:#475569}
+    .nb{font:bold 13px 'Segoe UI',Helvetica,Arial,sans-serif;fill:#2563eb}
+    .c{font:14px Consolas,Menlo,monospace;fill:#0f172a}
+    .cg{font:14px Consolas,Menlo,monospace;fill:#475569}
+    .m{text-anchor:middle}
+    .e{text-anchor:end}
+  </style>
+  <defs>
+    <marker id="ab" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2563eb"/></marker>
+  </defs>
+  <rect x="0.5" y="0.5" width="959" height="519" rx="12" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+  <text x="32" y="46" class="ti">El router y la carga diferida</text>
+
+  <!-- Navegador -->
+  <text x="32" y="86" class="n">Barra de direcciones</text>
+  <rect x="32" y="96" width="248" height="88" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+  <circle cx="48" cy="110" r="4" fill="#cbd5e1"/>
+  <circle cx="62" cy="110" r="4" fill="#cbd5e1"/>
+  <circle cx="76" cy="110" r="4" fill="#cbd5e1"/>
+  <line x1="32" y1="122" x2="280" y2="122" stroke="#cbd5e1" stroke-width="1"/>
+  <rect x="44" y="134" width="224" height="36" rx="18" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.5"/>
+  <text x="60" y="157" class="c">localhost:4200/tickets</text>
+
+  <line x1="282" y1="152" x2="316" y2="152" stroke="#2563eb" stroke-width="2" marker-end="url(#ab)"/>
+
+  <!-- Rutas -->
+  <rect x="320" y="76" width="290" height="276" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+  <text x="336" y="102" class="bb">app.routes.ts</text>
+  <text x="336" y="122" class="n">se revisan en orden</text>
+
+  <rect x="332" y="136" width="266" height="30" rx="6" fill="#f1f5f9"/>
+  <text x="346" y="156" class="n m">1</text><text x="366" y="156" class="c">'login'</text>
+  <rect x="332" y="170" width="266" height="30" rx="6" fill="#f1f5f9"/>
+  <text x="346" y="190" class="n m">2</text><text x="366" y="190" class="c">'register'</text>
+  <rect x="332" y="204" width="266" height="30" rx="6" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="346" y="224" class="n m">3</text><text x="366" y="224" class="c">'tickets'</text>
+  <text x="588" y="224" class="nb e">coincide</text>
+  <rect x="332" y="238" width="266" height="30" rx="6" fill="#f1f5f9"/>
+  <text x="346" y="258" class="n m">4</text><text x="366" y="258" class="c">'users'</text>
+  <rect x="332" y="272" width="266" height="30" rx="6" fill="#f1f5f9"/>
+  <text x="346" y="292" class="n m">5</text><text x="366" y="292" class="c" xml:space="preserve">''   → tickets</text>
+  <rect x="332" y="306" width="266" height="30" rx="6" fill="#f1f5f9"/>
+  <text x="346" y="326" class="n m">6</text><text x="366" y="326" class="c">'**' → tickets</text>
+  <text x="366" y="374" class="n">↑ comodín: siempre de último</text>
+
+  <!-- Shell de la app -->
+  <rect x="660" y="76" width="268" height="276" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+  <rect x="660" y="76" width="268" height="44" rx="10" fill="#1e293b"/>
+  <rect x="660" y="100" width="268" height="20" fill="#1e293b"/>
+  <text x="676" y="103" class="hd">HelpDesk · Tickets · Usuarios</text>
+  <text x="912" y="140" class="n e">↑ no cambia</text>
+  <rect x="676" y="150" width="236" height="186" rx="10" fill="#ffffff" stroke="#2563eb" stroke-width="1.5" stroke-dasharray="6 4"/>
+  <text x="692" y="174" class="c">&lt;router-outlet /&gt;</text>
+  <rect x="692" y="188" width="204" height="132" rx="10" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+  <text x="794" y="230" class="bb m">componente Tickets</text>
+  <rect x="714" y="250" width="160" height="10" rx="5" fill="#ffffff"/>
+  <rect x="714" y="270" width="160" height="10" rx="5" fill="#ffffff"/>
+  <rect x="714" y="290" width="120" height="10" rx="5" fill="#ffffff"/>
+  <line x1="600" y1="219" x2="690" y2="219" stroke="#2563eb" stroke-width="2" marker-end="url(#ab)"/>
+
+  <!-- Archivos JavaScript -->
+  <line x1="32" y1="394" x2="928" y2="394" stroke="#e2e8f0" stroke-width="1"/>
+  <text x="32" y="422" class="bb">Archivos JavaScript</text>
+
+  <rect x="32" y="436" width="90" height="34" rx="10" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+  <text x="77" y="458" class="c m">main.js</text>
+  <text x="32" y="492" class="n">carga inicial</text>
+
+  <rect x="176" y="436" width="116" height="34" rx="10" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+  <text x="234" y="458" class="c m">tickets.js</text>
+  <text x="176" y="492" class="n">se descargó al entrar a /tickets</text>
+
+  <rect x="470" y="436" width="100" height="34" rx="10" fill="#f1f5f9" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="5 4"/>
+  <text x="520" y="458" class="cg m">login.js</text>
+  <rect x="586" y="436" width="100" height="34" rx="10" fill="#f1f5f9" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="5 4"/>
+  <text x="636" y="458" class="cg m">users.js</text>
+  <text x="470" y="492" class="n">todavía no se descargan</text>
+</svg>

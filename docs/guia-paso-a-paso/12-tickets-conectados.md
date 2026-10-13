@@ -1,5 +1,7 @@
 # Iteración 12 · Tickets conectados
 
+[← 11 · Interceptor y guards](11-interceptor-guards.md) · [Índice](README.md) · [13 · Panel de administración →](13-panel-admin.md) <!-- nav -->
+
 **Clase:** martes 17 de noviembre · **Entra en:** parcial 2 · **Duración:** 45 min · **Temas del plan:** consumo de APIs REST, arquitectura del frontend.
 
 > **JavaScript que vas a ver aquí:** [métodos de arreglos](06b-javascript-minimo.md#6-métodos-de-arreglos), [spread y rest](06b-javascript-minimo.md#7-spread-rest-y-atajos-de-objetos), [plantillas de texto](06b-javascript-minimo.md#2-plantillas-de-texto-template-literals). Si algo no lo reconoces, repásalo en la tarea [JavaScript mínimo](06b-javascript-minimo.md) antes de seguir.
@@ -46,6 +48,8 @@ El código que se escribe en el `constructor` se ejecuta cuando Angular crea el 
 ```
 
 `$event` es el valor nuevo que eligió el usuario.
+
+![Siete pasos para crear un ticket: del clic en el componente al servicio, el interceptor, FastAPI y de vuelta a la tabla](img/12-flujo-datos.svg)
 
 ## Paso a paso
 
@@ -292,3 +296,7 @@ Usa tres sesiones: lo más cómodo es una ventana normal, una de incógnito y ot
 git add .
 git commit -m "feat(web): tickets conectados a la API según el rol"
 ```
+
+---
+
+[← 11 · Interceptor y guards](11-interceptor-guards.md) · [Índice](README.md) · [13 · Panel de administración →](13-panel-admin.md) <!-- nav -->

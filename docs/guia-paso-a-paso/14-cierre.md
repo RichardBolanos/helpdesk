@@ -1,5 +1,7 @@
 # Iteración 14 · Cierre: pruebas, despliegue y auditoría con IA
 
+[← 13 · Panel de administración](13-panel-admin.md) · [Índice](README.md) · [Extra · Correos automáticos (opcional) →](extra-correos.md) <!-- nav -->
+
 **Clase:** martes 24 de noviembre · **Entra en:** parcial 2 · **Duración:** 60 min (si no alcanza el tiempo, las partes 3 y 4 se terminan en casa antes del parcial) · **Temas del plan:** auditoría técnica asistida por IA, CI/CD, despliegue, Git colaborativo.
 
 ## Lo que vas a construir
@@ -93,6 +95,8 @@ Crea `environment.development.ts` y configura `angular.json` para que `ng serve`
 ## Parte 3 · Integración continua (CI)
 
 **CI** (*Continuous Integration*) significa que cada vez que alguien sube código, un servidor lo descarga, instala todo y ejecuta las pruebas y la compilación. Si algo falla, el equipo se entera antes de que llegue a producción. **CD** (*Continuous Deployment*) agrega el paso de publicar automáticamente si todo pasó.
+
+![Cada push ejecuta checkout, instalación, pruebas y build en GitHub Actions; si todo pasa se puede desplegar frontend, backend y base de datos](img/14-ci.svg)
 
 Crea `.github/workflows/ci.yml` en la raíz del repositorio:
 
@@ -237,3 +241,7 @@ El parcial 2 es sobre el proyecto completo. Verifica que:
 - `npx ng test --watch=false` pasa.
 - Puedes explicar, archivo por archivo, qué pasa desde que un usuario oprime *Crear ticket* hasta que la fila aparece en la tabla.
 - Intentaste al menos una de las ideas de *Para ir más allá*: se parecen a los cambios en vivo que te pueden pedir.
+
+---
+
+[← 13 · Panel de administración](13-panel-admin.md) · [Índice](README.md) · [Extra · Correos automáticos (opcional) →](extra-correos.md) <!-- nav -->

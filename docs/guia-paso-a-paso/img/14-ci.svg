@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="592" viewBox="0 0 960 592" role="img">
+  <title>Integración continua en cada push: GitHub Actions ejecuta checkout, setup-node, npm ci, ng test y ng build; si todo pasó, se despliega frontend, backend y base de datos</title>
+  <style>
+    text { font-family: Segoe UI, Helvetica, Arial, sans-serif; font-size: 15px; fill: #0f172a; }
+    .ttl { font-size: 24px; font-weight: 700; }
+    .h { font-size: 16px; font-weight: 700; fill: #1e293b; }
+    .bd { font-weight: 700; }
+    .n { font-size: 13px; fill: #475569; }
+    .c { font-family: Consolas, Menlo, monospace; font-size: 14px; }
+    .m { text-anchor: middle; }
+    .step { fill: #ffffff; stroke: #2563eb; stroke-width: 1.5; }
+    .box { fill: #ffffff; stroke: #cbd5e1; stroke-width: 1.5; }
+  </style>
+  <defs>
+    <marker id="aDark" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="10" markerHeight="10" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#1e293b"/></marker>
+    <marker id="aBlue" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#2563eb"/></marker>
+    <marker id="aGreen" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="10" markerHeight="10" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#16a34a"/></marker>
+    <marker id="aRed" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" markerWidth="10" markerHeight="10" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#dc2626"/></marker>
+  </defs>
+
+  <rect x="0.5" y="0.5" width="959" height="591" rx="12" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+  <text x="32" y="46" class="ttl">Integración continua en cada push</text>
+
+  <!-- git push -->
+  <rect x="32" y="108" width="120" height="64" rx="10" fill="#1e293b" stroke="#1e293b" stroke-width="1.5"/>
+  <text x="92" y="145" class="c m" style="fill:#ffffff">git push</text>
+  <line x1="154" y1="140" x2="194" y2="140" stroke="#1e293b" stroke-width="2" marker-end="url(#aDark)"/>
+
+  <!-- GitHub Actions -->
+  <rect x="196" y="72" width="732" height="110" rx="10" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="212" y="98" class="bd" style="fill:#2563eb">GitHub Actions</text>
+  <rect x="212" y="118" width="116" height="44" rx="10" class="step"/>
+  <text x="270" y="145" class="c m">checkout</text>
+  <rect x="358" y="118" width="116" height="44" rx="10" class="step"/>
+  <text x="416" y="145" class="c m">setup-node</text>
+  <rect x="504" y="118" width="116" height="44" rx="10" class="step"/>
+  <text x="562" y="145" class="c m">npm ci</text>
+  <rect x="650" y="118" width="116" height="44" rx="10" class="step"/>
+  <text x="708" y="145" class="c m">ng test</text>
+  <rect x="796" y="118" width="116" height="44" rx="10" class="step"/>
+  <text x="854" y="145" class="c m">ng build</text>
+  <line x1="330" y1="140" x2="356" y2="140" stroke="#2563eb" stroke-width="2" marker-end="url(#aBlue)"/>
+  <line x1="476" y1="140" x2="502" y2="140" stroke="#2563eb" stroke-width="2" marker-end="url(#aBlue)"/>
+  <line x1="622" y1="140" x2="648" y2="140" stroke="#2563eb" stroke-width="2" marker-end="url(#aBlue)"/>
+  <line x1="768" y1="140" x2="794" y2="140" stroke="#2563eb" stroke-width="2" marker-end="url(#aBlue)"/>
+
+  <!-- Resultados -->
+  <line x1="316" y1="184" x2="316" y2="214" stroke="#16a34a" stroke-width="2" marker-end="url(#aGreen)"/>
+  <line x1="699" y1="184" x2="699" y2="214" stroke="#dc2626" stroke-width="2" marker-end="url(#aRed)"/>
+  <rect x="196" y="216" width="240" height="44" rx="10" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+  <text x="316" y="243" class="m bd" style="fill:#16a34a">todo pasó</text>
+  <rect x="470" y="216" width="458" height="44" rx="10" fill="#fee2e2" stroke="#dc2626" stroke-width="1.5"/>
+  <text x="699" y="243" class="m"><tspan class="bd" style="fill:#dc2626">algo falló:</tspan> el equipo se entera antes de producción</text>
+
+  <!-- CD -->
+  <line x1="316" y1="262" x2="316" y2="304" stroke="#16a34a" stroke-width="2" stroke-dasharray="6 4" marker-end="url(#aGreen)"/>
+  <text x="328" y="288" class="bd" style="fill:#16a34a">CD</text>
+
+  <rect x="32" y="306" width="896" height="200" rx="10" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.5"/>
+  <text x="52" y="334" class="h">Despliegue (CD: publicar si todo pasó)</text>
+
+  <rect x="52" y="352" width="268" height="40" rx="10" class="box"/>
+  <text x="186" y="377" class="m"><tspan class="bd">Frontend</tspan> · <tspan class="c">dist/</tspan></text>
+  <rect x="344" y="352" width="268" height="40" rx="10" class="box"/>
+  <text x="478" y="377" class="m"><tspan class="bd">Backend</tspan> · contenedor</text>
+  <rect x="636" y="352" width="268" height="40" rx="10" class="box"/>
+  <text x="770" y="377" class="m bd">Base de datos</text>
+
+  <line x1="186" y1="394" x2="186" y2="424" stroke="#1e293b" stroke-width="2" marker-end="url(#aDark)"/>
+  <line x1="478" y1="394" x2="478" y2="424" stroke="#1e293b" stroke-width="2" marker-end="url(#aDark)"/>
+  <line x1="770" y1="394" x2="770" y2="424" stroke="#1e293b" stroke-width="2" marker-end="url(#aDark)"/>
+
+  <rect x="52" y="426" width="268" height="60" rx="10" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="186" y="451" class="m">Vercel, Netlify</text>
+  <text x="186" y="471" class="m">o Firebase Hosting</text>
+  <rect x="344" y="426" width="268" height="60" rx="10" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="478" y="461" class="m">Render, Railway o Cloud Run</text>
+  <rect x="636" y="426" width="268" height="60" rx="10" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="770" y="451" class="m">PostgreSQL administrado</text>
+  <text x="770" y="471" class="m">(Neon, Supabase, RDS)</text>
+
+  <!-- Pie -->
+  <rect x="32" y="524" width="896" height="44" rx="10" fill="#fef9c3" stroke="#a16207" stroke-width="1.5"/>
+  <text x="48" y="551">Fuera de localhost cambian: <tspan class="c">apiUrl</tspan>, <tspan class="c">SECRET_KEY</tspan>, <tspan class="c">CORS_ORIGINS</tspan> y <tspan class="c">DATABASE_URL</tspan>. <tspan class="bd">Siempre con HTTPS.</tspan></text>
+</svg>

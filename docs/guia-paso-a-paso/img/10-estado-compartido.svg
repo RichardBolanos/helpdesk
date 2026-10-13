@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="516" viewBox="0 0 960 516" role="img">
+  <title>Un servicio, un estado para todos: AuthService guarda el estado en señales, los componentes lo leen y se respalda en LocalStorage</title>
+  <style>
+    .ti{font:bold 24px 'Segoe UI',Helvetica,Arial,sans-serif;fill:#0f172a}
+    .b{font:15px 'Segoe UI',Helvetica,Arial,sans-serif;fill:#0f172a}
+    .bb{font:bold 15px 'Segoe UI',Helvetica,Arial,sans-serif;fill:#0f172a}
+    .n{font:13px 'Segoe UI',Helvetica,Arial,sans-serif;fill:#475569}
+    .c{font:14px Consolas,Menlo,monospace;fill:#0f172a}
+    .m{text-anchor:middle}
+    .e{text-anchor:end}
+  </style>
+  <defs>
+    <marker id="ab" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2563eb"/></marker>
+    <marker id="ag" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#16a34a"/></marker>
+    <marker id="ay" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#a16207"/></marker>
+  </defs>
+  <rect x="0.5" y="0.5" width="959" height="515" rx="12" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+  <text x="32" y="46" class="ti">Un servicio, un estado para todos</text>
+
+  <!-- Login -->
+  <rect x="32" y="112" width="200" height="76" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+  <text x="48" y="140" class="bb">Login</text>
+  <text x="48" y="168" class="c">auth.login(...)</text>
+  <text x="280" y="140" class="c m">set()</text>
+  <line x1="234" y1="150" x2="326" y2="150" stroke="#2563eb" stroke-width="2" marker-end="url(#ab)"/>
+
+  <!-- AuthService -->
+  <rect x="330" y="80" width="300" height="140" rx="10" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="480" y="106" class="bb m">AuthService (una sola instancia)</text>
+  <rect x="346" y="120" width="268" height="86" rx="8" fill="#f1f5f9"/>
+  <text x="360" y="144" class="c">token = signal(...)</text>
+  <text x="360" y="168" class="c">user = signal(...)</text>
+  <text x="360" y="192" class="c">isLoggedIn = computed(...)</text>
+
+  <!-- Lectores -->
+  <rect x="720" y="72" width="208" height="72" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+  <text x="736" y="100" class="bb">App (encabezado)</text>
+  <text x="736" y="126" class="c">auth.user()?.name</text>
+  <rect x="720" y="160" width="208" height="72" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+  <text x="736" y="188" class="bb">Tickets</text>
+  <text x="736" y="214" class="c">auth.hasRole('user')</text>
+
+  <line x1="632" y1="128" x2="716" y2="109" stroke="#16a34a" stroke-width="2" marker-end="url(#ag)"/>
+  <text x="668" y="108" class="n m">leen</text>
+  <line x1="632" y1="172" x2="716" y2="194" stroke="#16a34a" stroke-width="2" marker-end="url(#ag)"/>
+  <text x="668" y="204" class="n m">leen</text>
+
+  <!-- LocalStorage -->
+  <line x1="440" y1="224" x2="440" y2="326" stroke="#a16207" stroke-width="2" marker-end="url(#ay)"/>
+  <text x="430" y="280" class="n e">setItem al iniciar sesión</text>
+  <line x1="520" y1="326" x2="520" y2="224" stroke="#a16207" stroke-width="2" marker-end="url(#ay)"/>
+  <text x="530" y="280" class="n">getItem al abrir la app</text>
+
+  <rect x="330" y="330" width="300" height="96" rx="10" fill="#fef9c3" stroke="#a16207" stroke-width="1.5"/>
+  <text x="346" y="356" class="bb">LocalStorage del navegador</text>
+  <text x="346" y="384" class="c">token</text>
+  <text x="346" y="408" class="c">user</text>
+  <text x="614" y="400" class="n e">solo guarda texto (JSON)</text>
+
+  <!-- Nota -->
+  <rect x="32" y="452" width="896" height="40" rx="10" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.5"/>
+  <text x="48" y="477" class="n">Al recargar la página se pierden las variables, pero no el LocalStorage.</text>
+</svg>

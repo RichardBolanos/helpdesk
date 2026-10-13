@@ -1,5 +1,7 @@
 # Iteración 11 · Interceptor y guards
 
+[← 10 · Mantener la sesión](10-sesion-localstorage.md) · [Índice](README.md) · [12 · Tickets conectados →](12-tickets-conectados.md) <!-- nav -->
+
 **Clase:** martes 17 de noviembre · **Entra en:** parcial 2 · **Duración:** 35 min · **Temas del plan:** arquitectura modular, seguridad, programación funcional.
 
 > **JavaScript que vas a ver aquí:** [funciones como valores](06b-javascript-minimo.md#5-funciones-como-valores), [operadores cortos](06b-javascript-minimo.md#8-verdadero-falso-y-operadores-cortos), [plantillas de texto](06b-javascript-minimo.md#2-plantillas-de-texto-template-literals). Si algo no lo reconoces, repásalo en la tarea [JavaScript mínimo](06b-javascript-minimo.md) antes de seguir.
@@ -21,12 +23,7 @@
 
 Un interceptor es una función por la que pasan **todas** las peticiones de `HttpClient` antes de salir, y todas las respuestas antes de llegar a quien las pidió:
 
-```
-componente ──▶ servicio ──▶ interceptor ──▶ API
-                              │ agrega Authorization
-componente ◀── servicio ◀── interceptor ◀── API
-                              │ si es 401: cierra sesión
-```
+![El interceptor agrega el token a cada petición y cierra la sesión ante un 401; el guard decide si se carga la pantalla o se redirige](img/11-interceptor-guards.svg)
 
 Es la misma idea del `CORSMiddleware` del backend: código que se escribe una vez y aplica a todo.
 
@@ -204,3 +201,7 @@ Y agrega `canActivate` a las rutas de tickets y usuarios:
 git add .
 git commit -m "feat(web): interceptor de autenticación y guards de rutas"
 ```
+
+---
+
+[← 10 · Mantener la sesión](10-sesion-localstorage.md) · [Índice](README.md) · [12 · Tickets conectados →](12-tickets-conectados.md) <!-- nav -->

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="512" viewBox="0 0 960 512" role="img">
+  <title>El Event Loop: tu código pide la petición, el navegador la hace en paralelo y el callback espera en la cola hasta que el hilo está libre</title>
+  <style>
+    .ti{font:bold 24px 'Segoe UI',Helvetica,Arial,sans-serif;fill:#0f172a}
+    .b{font:15px 'Segoe UI',Helvetica,Arial,sans-serif;fill:#0f172a}
+    .bb{font:bold 15px 'Segoe UI',Helvetica,Arial,sans-serif;fill:#0f172a}
+    .n{font:13px 'Segoe UI',Helvetica,Arial,sans-serif;fill:#475569}
+    .c{font:14px Consolas,Menlo,monospace;fill:#0f172a}
+    .k{font:bold 13px 'Segoe UI',Helvetica,Arial,sans-serif;fill:#ffffff;text-anchor:middle}
+    .m{text-anchor:middle}
+  </style>
+  <defs>
+    <marker id="ab" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2563eb"/></marker>
+    <marker id="ag" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#16a34a"/></marker>
+    <marker id="ay" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#a16207"/></marker>
+    <marker id="am" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#475569"/></marker>
+  </defs>
+  <rect x="0.5" y="0.5" width="959" height="511" rx="12" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+  <text x="32" y="46" class="ti">El Event Loop: pedir y seguir</text>
+
+  <!-- Columnas -->
+  <rect x="32" y="72" width="210" height="278" rx="10" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.5"/>
+  <text x="137" y="96" class="bb m">Tu código</text>
+  <text x="137" y="114" class="n m">(un solo hilo)</text>
+  <rect x="375" y="72" width="210" height="278" rx="10" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.5"/>
+  <text x="480" y="96" class="bb m">Navegador</text>
+  <rect x="718" y="72" width="210" height="278" rx="10" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.5"/>
+  <text x="823" y="96" class="bb m">Cola de tareas</text>
+
+  <!-- Columna 1 -->
+  <rect x="44" y="128" width="186" height="48" rx="10" fill="#ffffff" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="137" y="157" class="c m">http.post(...)</text>
+  <line x1="137" y1="178" x2="137" y2="232" stroke="#475569" stroke-width="2" marker-end="url(#am)"/>
+  <text x="147" y="210" class="n">no espera</text>
+  <rect x="44" y="236" width="186" height="86" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+  <text x="137" y="262" class="b m">sigue con lo</text>
+  <text x="137" y="282" class="b m">demás: la página</text>
+  <text x="137" y="302" class="b m">no se congela</text>
+
+  <!-- Columna 2 -->
+  <rect x="387" y="128" width="186" height="86" rx="10" fill="#ffffff" stroke="#16a34a" stroke-width="1.5"/>
+  <text x="480" y="154" class="b m">hace la petición</text>
+  <text x="480" y="174" class="b m">por su cuenta,</text>
+  <text x="480" y="194" class="b m">en paralelo</text>
+
+  <!-- Columna 3 -->
+  <rect x="730" y="176" width="186" height="92" rx="10" fill="#ffffff" stroke="#a16207" stroke-width="1.5"/>
+  <text x="823" y="200" class="b m">callback con la</text>
+  <text x="823" y="220" class="b m">respuesta</text>
+  <text x="823" y="250" class="c m">next: (r) =&gt; ...</text>
+
+  <!-- Flecha 1 -->
+  <line x1="232" y1="150" x2="383" y2="150" stroke="#2563eb" stroke-width="2" marker-end="url(#ab)"/>
+  <circle cx="308" cy="132" r="11" fill="#2563eb"/><text x="308" y="136.5" class="k">1</text>
+  <text x="308" y="172" class="n m">pide la petición</text>
+
+  <!-- Flecha 2 -->
+  <line x1="575" y1="196" x2="726" y2="196" stroke="#16a34a" stroke-width="2" marker-end="url(#ag)"/>
+  <circle cx="651" cy="178" r="11" fill="#16a34a"/><text x="651" y="182.5" class="k">2</text>
+  <text x="651" y="218" class="n m">llegó la respuesta</text>
+
+  <!-- Flecha 3 -->
+  <path d="M 823 270 C 823 440, 137 440, 137 326" fill="none" stroke="#a16207" stroke-width="2" marker-end="url(#ay)"/>
+  <circle cx="480" cy="404" r="11" fill="#a16207"/><text x="480" y="408.5" class="k">3</text>
+  <text x="480" y="432" class="n m">cuando el hilo está libre, se ejecuta</text>
+
+  <!-- Nota -->
+  <rect x="32" y="446" width="896" height="40" rx="10" fill="#fef9c3" stroke="#a16207" stroke-width="1.5"/>
+  <text x="48" y="471" class="n">Orden de prioridad: primero tu código, luego las promesas resueltas y después los setTimeout.</text>
+</svg>
